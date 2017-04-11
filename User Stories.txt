@@ -1,0 +1,35 @@
+User Stories:
+
+1. I want to see my name in homepage.
+
+2. I want to see the name and memo 
+
+3. I want to see my information in user profile page. 
+
+4. I want to see my current missions. 
+
+5. I want to see the description of my current missions. 
+
+6. I want to access my profile page from homepage. 
+
+7. I want to get back to the homepage from user profile page.
+
+
+Project 4
+1. I want to receive an authenticator upon login
+
+2. I want to log in and can create listing without further login. 
+
+3. I want to sign up to the website. 
+
+4. I want to log out. 
+
+5. I want to create a listing. 
+
+Project 5 
+1. As a user, I want to create listings that other can found by search.
+
+2. As a user, I want to search skills by full skill name. 
+
+3. As a user, I want to view details from the search result page.
+
