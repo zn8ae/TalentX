@@ -40,14 +40,11 @@
           <a class="navbar-brand" onclick="location.href='http://localhost:8003'" href="#" >TalentX</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-<!--           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button> -->
+          <form class="navbar-form navbar-right">
+            {% if is_logged_in %}
+            <button type="button" class="btn btn-success" onclick="location.href='{% url 'signout' %}'">Sign out</button>
+            {% endif %}
+          </form>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

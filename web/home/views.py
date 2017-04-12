@@ -11,22 +11,35 @@ from django.urls import reverse
 # Create your views here.
 @csrf_exempt
 def home(request):
+
+
 	form = SearchForm()
 	# make http call urllib, requests
 	username='Zihan'
 	r = requests.get('http://exp-api:8000/userdata/'+username)
 	data = r.json()
 
-	# d = {"person": {"first_sname": "Joe", "last_name": "Johnson"}}
-	return render_to_response('templates/homepage.html', {'form': form, 'data': data})
+	auth = request.COOKIES.get('auth')
+	if auth:
+		return render_to_response('templates/homepage.html', {'form': form, 'data': data, 'is_logged_in':True})
+	else:
+		return render_to_response('templates/homepage.html', {'form': form, 'data': data, 'is_logged_in':False})
 
 @csrf_exempt
 def profile(request):
 	username='Zihan'
 	r = requests.get('http://exp-api:8000/userdata/' + username)
 	data = r.json()
+	#return render_to_response('templates/profile.html',data)
+
+	form = SearchForm()
+
 	
-	return render_to_response('templates/profile.html',data)
+	auth = request.COOKIES.get('auth')
+	if auth:
+		return render_to_response('templates/profile.html', {'form': form,'data': data, 'is_logged_in':True})
+	else:
+		return render_to_response('templates/profile.html', {'form': form,'data': data, 'is_logged_in':False})
 
 @csrf_exempt
 def signup(request):
@@ -146,59 +159,24 @@ def create_skill(request):
 			result=r.json()
 			if result["status"]=="error" :
 				error = result["msg"]
-				return render(request,'templates/create_skill.html',  {'form': validate_form, 'error':error}) 
-			# return JsonResponse(result)
-			return render(request,'templates/skill_success.html')
+				return render(request,'templates/create_skill.html',  {'form': validate_form, 'error':error,'is_logged_in':True}) 
+			return render(request,'templates/skill_success.html',{'is_logged_in':True})
 		else:
-			return render(request, 'templates/create_skill.html', {'form': validate_form, 'error':error})
+			return render(request, 'templates/create_skill.html', {'form': validate_form, 'error':error,'is_logged_in':True})
 	form = CreateSkillForm()
 	if error!=None:
-		return render(request, 'templates/create_skill.html', {'form': form, 'error':error})
+		return render(request, 'templates/create_skill.html', {'form': form, 'error':error,'is_logged_in':True})
 	else:
-		return render(request, 'templates/create_skill.html', {'form': form})
-		# return HttpResponse("POST")
+		return render(request, 'templates/create_skill.html', {'form': form,'is_logged_in':True})
 
 
 @csrf_exempt
 def search(request):
-	#return HttpResponse("Reach Search")	
-	#return render_to_response('templates/search.html',)
-
-	# auth = request.COOKIES.get('auth')
-	# if not auth: 
-	# 	form = SignInForm
-	# 	return HttpResponseRedirect(reverse('signin'))
-
-	# if auth:
-	# 	if request.method == 'POST':
-	# 		#return HttpResponse("POST")	
-	# 		form = request.POST
-	# 		validate_form = SearchForm(form)
-	# 		if validate_form.is_valid():
-	# 			#return HttpResponse("Form Valid")	
-	# 			search = form["search"]
-	# 			context={
-	# 			'search':search
-	# 			}
-			
-	# 			r = requests.post('http://exp-api:8000/userdata/search/',data = context)
-	# 			result = r.content.decode('utf8')
-	# 			final = json.loads(result)
-	# 			context = {'form': validate_form, 'results': final['result']}
-
-	# 			return render(request, 'templates/search.html', context)
-
-
-	# 		else:
-	# 			return HttpResponse("Form Not Valid")	
-	# 	else:
-	# 		form = SearchForm()
-	# 	return render(request, 'templates/search.html', {'form': form,'error': ""})
-	# else:
-	# 	form = SearchForm()
-	# return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': ""})
-
-
+	auth = request.COOKIES.get('auth')
+	if auth:
+		is_logged_in = True
+	else:
+		is_logged_in = False
 
 	if request.method == 'POST':
 		#return HttpResponse("POST")	
@@ -214,17 +192,17 @@ def search(request):
 				r = requests.post('http://exp-api:8000/userdata/search/',data = context)
 				result = r.content.decode('utf8')
 				final = json.loads(result)
-				context = {'form': validate_form, 'results': final['result']}
+				context = {'form': validate_form, 'results': final['result'],'is_logged_in': is_logged_in}
 				return render(request, 'templates/search.html', context)
 
 			except ValueError:
 				form = SearchForm()
-				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': ""})
+				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})
 		else:
 			return HttpResponse("Form Not Valid")	
 	else:
 		form = SearchForm()
-	return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': ""})
+	return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})
 
 @csrf_exempt
 def detail(request):
