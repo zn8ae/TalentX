@@ -211,7 +211,7 @@ def detail(request):
 	r = requests.get('http://exp-api:8000/userdata/' + username)
 	data = r.json()
 	
-	return render_to_response('templates/detail.html',data)
+	return render_to_response('templates/detail.html',{'form':form,'data':data})
 
 
 
