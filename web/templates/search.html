@@ -75,27 +75,31 @@
         <div class="col-md-3" align = "center"> <h2> Price </h2> </div>
         <div class="col-md-3" align = "center"> <h2> Details </h2> </div>
         <div>
-        {% for r in results %}
-          <div class="col-md-3" align = "center">
-            <p>{{r.sname}}</p>
-          </div>  
-          <div class="col-md-3" align = "center">
-            <p>{{r.username}} </p>
+          {% for r in results %}
+            <div class="col-md-3" align = "center">
+              <p>{{r.sname}}</p>
+            </div>  
+            <div class="col-md-3" align = "center">
+              <p>{{r.username}} </p>
+            </div>
+            <div class="col-md-3" align = "center">
+              <p>{{r.price}}</p>
+            </div>
+            <div class="col-md-3" align = "center"> 
+              <a style="padding-bot: 80px;"href="http://localhost:8003/home/detail/{{r.id}}"><p>View</p></a> 
+            </div>
           </div>
-          <div class="col-md-3" align = "center">
-            <p>{{r.price}}</p>
-          </div>
-          <div class="col-md-3" align = "center"> 
-            <a style="padding-bot: 80px;"href="http://localhost:8003/home/detail/{{r.id}}"><p>View</p></a> 
-          </div>
-        </div>
-        {% endfor %}
+          {% endfor %}
         {% else %}
-        <h2>No Result Found</h2>
+          <h2>No Result Found</h2>
         {% endif %}
-        {% else %}
-        <h2>No Result Found</h2>
-       {% endif %}
+      {% else %}
+          {% if error != "" %}
+          <h2>{{error}}</h2>
+          {% else %}
+          <h2>No Result Found</h2>
+          {% endif %}
+      {% endif %}
       </div>
 
 

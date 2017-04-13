@@ -9,6 +9,7 @@ from django.contrib.auth.hashers import check_password, make_password
 from django.urls import reverse
 
 # Create your views here.
+
 @csrf_exempt
 def home(request):
 
@@ -17,7 +18,6 @@ def home(request):
 	username='Zihan'
 	r = requests.get('http://exp-api:8000/userdata/'+username)
 	data = r.json()
-
 	auth = request.COOKIES.get('auth')
 	if auth:
 		return render_to_response('templates/homepage.html', {'form': form, 'data': data, 'is_logged_in':True})
@@ -193,12 +193,13 @@ def search(request):
 				final = json.loads(result)
 				context = {'form': validate_form, 'results': final['result'],'is_logged_in': is_logged_in}
 				return render(request, 'templates/search.html', context)
-
 			except ValueError:
 				form = SearchForm()
-				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})
+				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "Value Error:Invalid Character",'is_logged_in': is_logged_in})
 		else:
-			return HttpResponse("Form Not Valid")	
+			form = SearchForm()
+			return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "Invalid Form Input",'is_logged_in': is_logged_in})
+			# return HttpResponse("Form Not Valid")	
 	else:
 		form = SearchForm()
 	return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})

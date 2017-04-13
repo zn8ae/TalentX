@@ -21,8 +21,8 @@ passwordValidator = RegexValidator(
 )
 
 skillValidator = RegexValidator(
-    regex='^[a-zA-Z0-9@$!%*#?&()]*$',
-    message='Must only contain a-z, A-Z, 0-9, @$!%*#?&()',
+    regex='^[a-zA-Z0-9@$!%*#?&() ]*$',
+    message='Must only contain a-z, A-Z, 0-9, @$!%*#?&() ',
     code='invalid_input'
 )
 
