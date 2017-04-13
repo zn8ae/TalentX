@@ -195,7 +195,7 @@ def search(request):
 				return render(request, 'templates/search.html', context)
 			except ValueError:
 				form = SearchForm()
-				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "Value Error:Invalid Character",'is_logged_in': is_logged_in})
+				return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})
 		else:
 			form = SearchForm()
 			return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "Invalid Form Input",'is_logged_in': is_logged_in})
