@@ -12,7 +12,6 @@ from django.urls import reverse
 @csrf_exempt
 def home(request):
 
-
 	form = SearchForm()
 	# make http call urllib, requests
 	username='Zihan'
@@ -212,7 +211,3 @@ def detail(request):
 	data = r.json()
 	
 	return render_to_response('templates/detail.html',{'form':form,'data':data})
-
-
-
-
