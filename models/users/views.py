@@ -34,17 +34,19 @@ def create_skill(request):
 		})
 
 @csrf_exempt
-def lookup_skill(request, username):
-	if request.method != 'GET':
-		return JsonResponse({'status':'error', 'msg':"must make GET request"})
+def lookup_skill(request):
+	if request.method != 'POST':
+		return JsonResponse({'status':'error', 'msg':"must make POST request"})
+	sid=request.POST.get("sid")
 	try:
-		s = models.Mission.objects.get(pk=mission_id)
+		s = models.Skill.objects.get(pk=sid)
 	except models.Mission.DoesNotExist:
 		return JsonResponse({'status':'error', 'msg':"Skill does not exist"})
 	return JsonResponse({
-		'status':'Found',
+		'status':'success',
 		'id':s.pk,
-		'mname':s.mname, 
+		'sname':s.sname, 
+		'username':s.username,
 		'desc':s.desc,
 		'price':s.price,
 		})

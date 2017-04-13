@@ -12,7 +12,6 @@ urlpatterns = [
 	url(r'^signin/', views.signin,name='signin'),
 	url(r'^signout/', views.signout,name='signout'),
 	url(r'^create/', views.create_skill,name='create'),
-	
 	url(r'^search/', views.search,name='search'),
-	url(r'^detail/', views.detail,name='detail'),
+	url(r'^detail/(?P<sid>\w+)', views.detail,name='detail'),
 ]

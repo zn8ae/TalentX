@@ -204,10 +204,17 @@ def search(request):
 	return render(request, 'templates/search.html', {'form': form, 'results':'NULL','error': "",'is_logged_in': is_logged_in})
 
 @csrf_exempt
-def detail(request):
+def detail(request, sid):
 	form = SearchForm()
-	username='Zihan'
-	r = requests.get('http://exp-api:8000/userdata/' + username)
+	# username='Zihan'
+	# r = requests.get('http://exp-api:8000/userdata/' + username)
+	# data = r.json()
+	context = {"sid":sid}
+	r = requests.post('http://exp-api:8000/userdata/getSkill/',context)
 	data = r.json()
 	
 	return render_to_response('templates/detail.html',{'form':form,'data':data})
+
+
+
+

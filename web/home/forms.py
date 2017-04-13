@@ -19,6 +19,13 @@ passwordValidator = RegexValidator(
     message='Password must only contain a-z, A-Z, 0-9, @$!%*#?&',
     code='invalid_password'
 )
+
+skillValidator = RegexValidator(
+    regex='^[a-zA-Z0-9@$!%*#?&()]*$',
+    message='Must only contain a-z, A-Z, 0-9, @$!%*#?&()',
+    code='invalid_input'
+)
+
 emailValidator = RegexValidator(
     regex='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$',
     message='Invalid Email',
@@ -39,10 +46,10 @@ class SignInForm(forms.Form):
     
 
 class CreateSkillForm(forms.Form):
-    skill = forms.CharField(label='Your skill', max_length=100)
-    price = forms.DecimalField(label='Your price',  decimal_places=2)
-    desc = forms.CharField(label='Your desc', max_length=100, widget=forms.Textarea(attrs={'rows':5,'cols':40}))
+    skill = forms.CharField(label='Your skill', max_length=100, required=True, validators=[skillValidator])
+    price = forms.DecimalField(label='Your price',  decimal_places=2, required=True)
+    desc = forms.CharField(label='Your desc', max_length=100, widget=forms.Textarea(attrs={'rows':5,'cols':40}),required=True,validators=[skillValidator])
 
 class SearchForm(forms.Form):
     #search = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Enter Skill'}))
-    search = forms.CharField(label='', max_length=100)
+    search = forms.CharField(label='', max_length=100, validators=[skillValidator])

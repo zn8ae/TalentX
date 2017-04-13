@@ -11,6 +11,20 @@ import json
 
 # Create your views here.
 @csrf_exempt
+def getuser(request, username):
+    # make http call urllib, requests
+    try:
+        u = requests.get('http://models-api:8000/users/'+ username)
+        m = requests.get('http://models-api:8000/missions/1')
+        m2 = requests.get('http://models-api:8000/missions/2')
+        context = {'users':u.json(),'mission':m.json(),'mission2':m2.json()}
+        
+    except requests.exceptions.ConnectionError:
+        return HttpResponse("Connection Error")
+
+    return JsonResponse(context)
+
+@csrf_exempt
 def userdata(request, username):
 	# make http call urllib, requests
 	try:
@@ -47,6 +61,15 @@ def createSkill(request):
     response = r.json()
     kp = KafkaProducer(bootstrap_servers='kafka:9092')
     kp.send('new-listings-topic', json.dumps(response).encode('utf-8'))
+    return JsonResponse(response)
+
+@csrf_exempt
+def getSkill(request):
+    context = request.POST.copy()
+    sid=context["sid"]
+    skilldata = {'sid':sid}
+    r = requests.post('http://models-api:8000/skills/lookup',skilldata)
+    response = r.json()
     return JsonResponse(response)
 #New
 @csrf_exempt
