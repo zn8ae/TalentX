@@ -23,11 +23,11 @@ before_script:
   - docker-compose up -d
   - sleep 10 # need to give time for mysql to start
   - docker ps -a
- # - docker start talentx_model_1
+  - docker start talentx_models_1
 
 script:
   - >
-    docker exec -it talentx_model_1 bash -c
+    docker exec -it talentx_models_1 bash -c
     "python manage.py test"
 after_script:
   - docker-compose stop
