@@ -1,37 +1,37 @@
 language: python
 
 python:
-	- "3.5"
+  - "3.5"
 
 services:
-	- docker
+  - docker
 
 install:
-	- docker pull mysql:5.7.14
-	- mkdir db
-	- >
-	docker run --name mysql -d -e MYSQL_ROOT_PASSWORD='$3cureUS'
-	-v `pwd`/db:/var/lib/mysql mysql:5.7.14
-	- sleep 10 # need to give time for mysql to start
-	- >
-	docker run -it --name mysql-cmd --rm --link mysql:db mysql:5.7.14
-	mysql -uroot -p'$3cureUS' -h db -v -e
-	"CREATE DATABASE cs4501 CHARACTER SET utf8;
-	CREATE USER 'www'@'%' IDENTIFIED BY '\$3cureUS';
-	GRANT ALL PRIVILEGES ON *.* TO 'www'@'%';	
+  - docker pull mysql:5.7.14
+  - mkdir db
+  - >
+  docker run --name mysql -d -e MYSQL_ROOT_PASSWORD='$3cureUS'
+  -v `pwd`/db:/var/lib/mysql mysql:5.7.14
+  - sleep 10 # need to give time for mysql to start
+  - >
+  docker run -it --name mysql-cmd --rm --link mysql:db mysql:5.7.14
+  mysql -uroot -p'$3cureUS' -h db -v -e
+  "CREATE DATABASE cs4501 CHARACTER SET utf8;
+  CREATE USER 'www'@'%' IDENTIFIED BY '\$3cureUS';
+  GRANT ALL PRIVILEGES ON *.* TO 'www'@'%';  
 
 before_script:
-	- docker-compose up
-	- docker start talentx_model_1
-	#- docker start talentx_web_1
+  - docker-compose up
+  - docker start talentx_model_1
+  #- docker start talentx_web_1
 script:
-	- >
-	docker exec -it talentx_model_1 bash -c
-	"python manage.py test"
+  - >
+  docker exec -it talentx_model_1 bash -c
+  "python manage.py test"
 
 after_script:
-	- docker-compose stop
-	- docker stop mysql
-	- docker rm `docker ps -a -q`
-	- docker rmi `docker images -q`
-	- sudo rm -rf db
+  - docker-compose stop
+  - docker stop mysql
+  - docker rm `docker ps -a -q`
+  - docker rmi `docker images -q`
+  - sudo rm -rf db
