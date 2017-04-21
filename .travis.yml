@@ -23,7 +23,7 @@ before_script:
   - docker-compose up -d
   - sleep 10 # need to give time for mysql to start
   - docker ps -a
-  - docker start talentx_model_1
+ # - docker start talentx_model_1
 
 script:
   - >
