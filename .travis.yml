@@ -24,7 +24,7 @@ before_script:
   - sleep 10 # need to give time for mysql to start
   - docker ps -a
   - docker start talentx_models_1
-
+#
 script:
   - >
     docker exec -it talentx_models_1 bash -c
