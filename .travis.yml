@@ -24,7 +24,7 @@ before_script:
 	- docker-compose up
 	- docker start talentx_model_1
 	#- docker start talentx_web_1
-
+#docker exec -it talentx_model_1 bash -c
 
 script:
 	- >
