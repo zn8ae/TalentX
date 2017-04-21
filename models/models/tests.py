@@ -13,29 +13,18 @@ class UserLookupTest(TestCase):
 
     def test_lookup_user(self):
         #response = self.client.get(reverse('look up a user via GET', kwargs={'pk':'1'}))
-        response = self.client.get('/users/1/')
-        self.assertContains(response,'username')
+        response = self.client.get('/users/Zihan/')
+        #self.assertContains(response,'username')
         self.assertContains(response,'firstname')
         user = response.json()
         self.assertEquals(user['firstname'],'Zihan')
         self.assertEquals(user['lastname'],'Ni')
-        self.assertEquals(user['id'],1)
 
-    def tearDown(self):
-        pass #nothing to tear down
-
-
-class UserDeleteTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
-     
 
     def test_delete_user(self):
+        response = self.client.post('/users/delete/',{'username':'hq5rc'})
 
-        response = self.client.post('/users/delete/',{'id':'2'})
+        #response = self.client.post('/users/delete/',{'id':'hq5rc'})
      
         # res = response.content.decode('utf-8')
         # res = json.loads(res)
@@ -44,61 +33,31 @@ class UserDeleteTest(TestCase):
         # a = response.status_code
         # self.assertEquals(a,200)
         self.assertEquals(output,res)
-
-    def tearDown(self):
-        pass #nothing to tear down
-
-class UserEditTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
-     
+ 
 
     def test_edit_user(self):
 
-        response = self.client.post('/users/edit/',{'id':'1','first_name':'newname'})
+        response = self.client.post('/users/edit/',{'username':'Zihan','company':'Baidu'})
 
         user = response.json()
 
         output = {'result':"Success"}
-        self.assertEquals(user['firstname'],'newname')
+        self.assertEquals(user['company'],'Baidu')
 
-    def tearDown(self):
-        pass #nothing to tear down
 
-class UserCreateTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
-     
-
-    def test_Create_user(self):
+    def test_create_user(self):
        # response = self.client.post('users/create/',{'id':10})
-        response = self.client.post('/users/create/',{'uname':'Erzi',
+        response = self.client.post('/users/create/',{'username':'Erzi',
             'first_name':'DaTou','last_name':'Erzi','email':'dtez@virginia.edu'})
         
         user = response.json()
 
-        output = {'status':'success','user_id': 5}
+        output = {'status':'success','user_id': 'Erzi'}
         self.assertEquals(output,user)
 
-
-    def tearDown(self):
-        pass #nothing to tear down
-
-class MissionLookupTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
      
 
-    def test_lookup_user(self):
+    def test_lookup_mission(self):
         response = self.client.get('/missions/1/')
         self.assertContains(response,'mname')
         self.assertContains(response,'desc')
@@ -106,18 +65,10 @@ class MissionLookupTest(TestCase):
         self.assertEquals(user['mname'],'Machine Learning Problem')
         self.assertEquals(user['desc'],'We need a machine learning expert who can help us build a new system!')
 
-    def tearDown(self):
-        pass #nothing to tear down
 
-class MissionDelete(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
      
 
-    def test_delete_user(self):
+    def test_delete_mission(self):
 
         response = self.client.post('/missions/delete/',{'id':'2'})
      
@@ -129,20 +80,8 @@ class MissionDelete(TestCase):
         # self.assertEquals(a,200)
         self.assertEquals(output,res)
 
-    def tearDown(self):
-        pass #nothing to tear down
 
-
-
-class MissionEditTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
-     
-
-    def test_edit_user(self):
+    def test_edit_misson(self):
 
         response = self.client.post('/missions/edit/',{'id':'1','mname':'newname'})
 
@@ -151,19 +90,9 @@ class MissionEditTest(TestCase):
         output = {'result':"Success"}
         self.assertEquals(user['mname'],'newname')
 
-    def tearDown(self):
-        pass #nothing to tear down
 
 
-class MissionCreateTest(TestCase):
-    fixtures = ['db.json']
-        #setUp method is called before each test in this class
-    def setUp(self):
-        #User.objects.create(uname = 'steven')
-        pass
-     
-
-    def test_Create_user(self):
+    def test_create_misson(self):
         response = self.client.post('/missions/create/',{'mname':'MissionX',
             'desc':'DaTou','price':'3000'})
         
@@ -175,3 +104,6 @@ class MissionCreateTest(TestCase):
 
     def tearDown(self):
         pass #nothing to tear down
+
+
+
