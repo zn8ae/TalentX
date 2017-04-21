@@ -22,11 +22,13 @@ install:
 
 before_script:
 	- docker-compose up
-	- docker start talentx_web_1
+	- docker start talentx_model_1
+	#- docker start talentx_web_1
+
 
 script:
 	- >
-	docker exec -it sugar-entities1 bash -c
+	docker exec -it talentx_model_1 bash -c
 	"python manage.py test"
 
 after_script:

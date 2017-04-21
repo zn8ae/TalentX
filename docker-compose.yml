@@ -28,7 +28,8 @@ web:
       - ./web/:/app
     ports:
       - "8003:8000"
-    command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
+    #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
+    command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
 kafka:
    image: spotify/kafka
