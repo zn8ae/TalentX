@@ -8,10 +8,10 @@ services:
 
 install: # prepare mySQL database
   - docker pull mysql:5.7.14
-  - mkdir ~/cs4501/db
+  - mkdir db
   - >
     docker run --name mysql -d -e MYSQL_ROOT_PASSWORD='$3cureUS'
-    -v ~/cs4501/db:/var/lib/mysql  mysql:5.7.14
+    -v `pwd`/db:/var/lib/mysql  mysql:5.7.14
   - sleep 10 # need to give time for mysql to start
   - >
     docker run -it --name mysql-cmd --rm --link mysql:db mysql:5.7.14
