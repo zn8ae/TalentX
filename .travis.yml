@@ -21,6 +21,7 @@ install: # prepare mySQL database
     GRANT ALL PRIVILEGES ON *.* TO 'www'@'%';"
 before_script:
   - docker-compose up -d
+  - sleep 10 # need to give time for mysql to start
   - docker ps -a
   - docker start talentx_model_1
 
