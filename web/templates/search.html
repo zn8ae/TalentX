@@ -86,7 +86,9 @@
             <p>{{r.price}}</p>
           </div>
           <div class="col-md-3" align = "center"> 
-            <a name = "view" style="padding-bot: 80px;"href="http://localhost:8003/home/detail/{{r.id}}"><p>View</p></a> 
+            <!-- <a name = "view" style="padding-bot: 80px;"href="http://localhost:8003/home/detail/{{r.id}}"><p>View</p></a>  -->
+            <a name = "view" style="padding-bot: 80px;"
+            href="/home/detail/{{r.id}}"><p>View</p></a> 
           </div>
         </div>
         {% endfor %}

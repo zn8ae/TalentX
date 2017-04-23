@@ -32,6 +32,7 @@ emailValidator = RegexValidator(
     code='invalid_email'
 )
 
+
 class SignUpForm(forms.Form):
 	username = forms.CharField(label='Your username', max_length=100, required=True, validators=[usernameValidator])
 	email = forms.CharField(label='Your email', max_length=100, required=True, validators=[emailValidator])
@@ -47,7 +48,7 @@ class SignInForm(forms.Form):
 
 class CreateSkillForm(forms.Form):
     skill = forms.CharField(label='Your skill', max_length=100, required=True, validators=[skillValidator])
-    price = forms.DecimalField(label='Your price',  decimal_places=2, required=True)
+    price = forms.DecimalField(label='Your price', decimal_places=2, max_digits=9,required=True)
     desc = forms.CharField(label='Your desc', max_length=100, widget=forms.Textarea(attrs={'rows':5,'cols':40}),required=True)
 
 class SearchForm(forms.Form):
