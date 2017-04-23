@@ -430,6 +430,6 @@ def auth_create(request):
 		else:
 			auth = generate_auth()
 			#db store auth
-			resp = {'auth':auth}
+			resp = {'auth':auth, 'username':username}
 			return JsonResponse(resp)
 		

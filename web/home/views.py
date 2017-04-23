@@ -14,14 +14,17 @@ def home(request):
 
 	form = SearchForm()
 	# make http call urllib, requests
-	username='Zihan'
-	r = requests.get('http://exp-api:8000/userdata/'+username)
-	data = r.json()
 
 	auth = request.COOKIES.get('auth')
 	if auth:
+		username=request.COOKIES.get("username")
+		r = requests.get('http://exp-api:8000/userdata/'+username)
+		data = r.json()
 		return render_to_response('templates/homepage.html', {'form': form, 'data': data, 'is_logged_in':True})
 	else:
+		username='Zihan'
+		r = requests.get('http://exp-api:8000/userdata/'+username)
+		data = r.json()
 		return render_to_response('templates/homepage.html', {'form': form, 'data': data, 'is_logged_in':False})
 
 @csrf_exempt
@@ -109,6 +112,7 @@ def signin(request):
 			else:
 				response = HttpResponseRedirect(reverse('create'))
 				response.set_cookie("auth", result["auth"])
+				response.set_cookie("username", result["username"])
 				# return JsonResponse(result)
 				return response	
 		except requests.exceptions.RequestException as e:
@@ -119,6 +123,7 @@ def signout(request):
 	response = HttpResponseRedirect("/homepage")
 	#return HttpResponse("POST")	
 	response.delete_cookie("auth")
+	response.delete_cookie("username")
 	return response
 
 @csrf_exempt
@@ -134,6 +139,7 @@ def create_skill(request):
 	error = None
 
 	auth = request.COOKIES.get('auth')
+	username = request.COOKIES.get('username')
 	if not auth: 
 		form = SignInForm
 		return HttpResponseRedirect(reverse('signin'))
@@ -150,7 +156,8 @@ def create_skill(request):
 			context={
 			'skill': skill,
 			'price':price,
-			'desc':desc
+			'desc':desc,
+			'username':username
 			}
 			
 			#r = requests.post('http://exp-api:8000/userdata/create/', data=context)

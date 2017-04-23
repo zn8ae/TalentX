@@ -56,7 +56,8 @@ def createSkill(request):
     skill=context["skill"]
     price=context["price"]
     desc=context["desc"]
-    skilldata = {'sname':skill,'price':price,'desc':desc,'username':'Zihan'}
+    username=context["username"]
+    skilldata = {'sname':skill,'price':price,'desc':desc,'username':username}
     r = requests.post('http://models-api:8000/skills/create',skilldata)
     response = r.json()
     kp = KafkaProducer(bootstrap_servers='kafka:9092')
@@ -98,7 +99,7 @@ def signin(request):
                 #check authenticator
                 user={"username":user_username}
                 p = requests.post('http://models-api:8000/users/auth_create/',user)
-                resp = {"status":"success", "auth":p.json()["auth"]}
+                resp = {"status":"success", "auth":p.json()["auth"],"username":p.json()["username"]}
                 return JsonResponse(resp)
             else:
                 return JsonResponse({"status":"error","msg":"Incorrect Password"})
