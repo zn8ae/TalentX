@@ -205,6 +205,11 @@ def search(request):
 
 @csrf_exempt
 def detail(request, sid):
+	auth = request.COOKIES.get('auth')
+	if auth:
+		is_logged_in = True
+	else:
+		is_logged_in = False
 	form = SearchForm()
 	# username='Zihan'
 	# r = requests.get('http://exp-api:8000/userdata/' + username)
@@ -213,7 +218,7 @@ def detail(request, sid):
 	r = requests.post('http://exp-api:8000/userdata/getSkill/',context)
 	data = r.json()
 	
-	return render_to_response('templates/detail.html',{'form':form,'data':data})
+	return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in})
 
 
 

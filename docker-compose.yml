@@ -31,6 +31,17 @@ web:
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
+web2:
+    image: tp33/django
+    links:
+      -  exp:exp-api
+    volumes:
+      - ./web/:/app
+    ports:
+      - "8004:8000"
+    #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
+    command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
+
 kafka:
    image: spotify/kafka
    container_name: kafka
@@ -54,3 +65,11 @@ batch:
     volumes:
        - ./batch:/app/batch
     command: bash -c "python /app/batch/main.py"
+
+haproxy:
+    image: haproxy
+    container_name: my-running-haproxy
+    volumes:
+      - ./:/usr/local/etc/haproxy
+    ports:
+      - "8080:80"

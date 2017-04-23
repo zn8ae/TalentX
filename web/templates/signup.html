@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" onclick="location.href='http://localhost:8003'" href="#" >TalentX</a>
+          <a class="navbar-brand" onclick="location.href='{% url 'home' %}'" href="#" >TalentX</a>
 
           <form  action="/home/search/" method="post" class = "navbar-form navbar-left" >
             {{ searchform.as_p }} 

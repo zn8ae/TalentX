@@ -39,8 +39,8 @@ def lookup_skill(request):
 		return JsonResponse({'status':'error', 'msg':"must make POST request"})
 	sid=request.POST.get("sid")
 	try:
-		s = models.Skill.objects.get(pk=s.pk)
-	except models.Mission.DoesNotExist:
+		s = models.Skill.objects.get(pk=sid)
+	except models.Skill.DoesNotExist:
 		return JsonResponse({'status':'error', 'msg':"Skill does not exist"})
 	return JsonResponse({
 		'status':'success',
