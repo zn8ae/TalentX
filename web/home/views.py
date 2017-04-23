@@ -29,19 +29,19 @@ def home(request):
 
 @csrf_exempt
 def profile(request):
-	username='Zihan'
-	r = requests.get('http://exp-api:8000/userdata/' + username)
-	data = r.json()
+
 	#return render_to_response('templates/profile.html',data)
 
 	form = SearchForm()
-
-	
 	auth = request.COOKIES.get('auth')
 	if auth:
+		username=request.COOKIES.get("username")
+		r = requests.get('http://exp-api:8000/userdata/' + username)
+		data = r.json()
 		return render_to_response('templates/profile.html', {'form': form,'data': data, 'is_logged_in':True})
 	else:
-		return render_to_response('templates/profile.html', {'form': form,'data': data, 'is_logged_in':False})
+		form = SignInForm()
+		return HttpResponseRedirect(reverse('signin'))
 
 @csrf_exempt
 def signup(request):
@@ -141,7 +141,7 @@ def create_skill(request):
 	auth = request.COOKIES.get('auth')
 	username = request.COOKIES.get('username')
 	if not auth: 
-		form = SignInForm
+		form = SignInForm()
 		return HttpResponseRedirect(reverse('signin'))
 
 	if request.method=="POST":
