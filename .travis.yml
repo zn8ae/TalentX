@@ -19,8 +19,12 @@ install: # prepare mySQL database
     "CREATE DATABASE cs4501 CHARACTER SET utf8;
     CREATE USER 'www'@'%' IDENTIFIED BY '\$3cureUS';
     GRANT ALL PRIVILEGES ON *.* TO 'www'@'%';"
+
 before_script:
   - docker-compose up -d
+  - pip install selenium
+  - pip install chromedriver
+  - apt-get google-chrome-stable
   - sleep 10 # need to give time for mysql to start
   - docker ps -a
   - docker start talentx_models_1
