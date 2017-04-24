@@ -6,7 +6,6 @@ driver = webdriver.Chrome()
 
 #driver = webdriver.Chrome('/usr/local/bin/chromedriver')
 url = 'localhost:8003'
-
 driver.get(url)
 
 class WebTestCase(unittest.TestCase):
