@@ -66,6 +66,20 @@ batch:
        - ./batch:/app/batch
     command: bash -c "python /app/batch/main.py"
 
+selenium:
+    image: selenium/standalone-firefox:3.3.1-cesium
+    container_name: selenium
+    # links:
+    #     - web:web-app
+    ports:
+        - "4444:4444"
+    # environment:
+    #     ADVERTISED_HOST: selenium
+    #     ADVERTISED_PORT: 4444
+    # hostname: selenium
+    volumes:
+        - ./selenium:/dev/shm
+
 haproxy:
     image: haproxy
     container_name: my-running-haproxy
