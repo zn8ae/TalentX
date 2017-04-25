@@ -8,7 +8,7 @@ class WebTestCase(unittest.TestCase):
 
 
 	def test_signup(self):
-		driver = webdriver.Chrome()
+		driver = webdriver.Chrome('/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/chromedriver')
 		url = 'localhost:8003'
 		driver.get(url)
 		driver.find_element_by_name("signup").click()
