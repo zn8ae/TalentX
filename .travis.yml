@@ -23,7 +23,6 @@ install: # prepare mySQL database
 before_script:
   - docker-compose up -d
  # - apt-get google-chrome-stable
-  - sleep 10 # need to give time for mysql to start
   - docker ps -a
   - docker start talentx_models_1
 #
