@@ -8,7 +8,7 @@ class WebTestCase(unittest.TestCase):
 		pass
 
 	def test_signup(self):
-		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
 		url = 'http://127.0.0.1:8003'
 		driver.get(url)
 		driver.find_element_by_name("signup").click()
