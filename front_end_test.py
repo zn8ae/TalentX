@@ -1,5 +1,4 @@
 from selenium import webdriver
-from django.test import TestCase
 import unittest
 
 class WebTestCase(unittest.TestCase):
