@@ -15,17 +15,29 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 class WebTestCase(unittest.TestCase):
 
 	def setup(self):
-
 		pass
 
-	def test_main_page(self): #OK!!!
+	def test_signup(self):
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
 		driver.get('http://162.243.207.23:8003/')
-		title = driver.title
-		self.assertEquals(title, "TalentX")
+		driver.find_element_by_name("signup").click()
+		driver.find_element_by_id("id_username").send_keys("steven08")
+		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
+		driver.find_element_by_id("id_last_name").send_keys("qu")
+		driver.find_element_by_id("id_first_name").send_keys("steven")
+		driver.find_element_by_id("id_password").send_keys("stevenqu")
+		driver.find_element_by_id("id_password2").send_keys("stevenqu")
+		driver.find_element_by_id("submit").click()
+
+
+	# def test_main_page(self): #OK!!!
+	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
+	# 	driver.get('http://162.243.207.23:8003/')
+	# 	title = driver.title
+	# 	self.assertEquals(title, "TalentX")
 
 	# def test_signup(self): #OK!!!
-	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
 	# 	driver.get('http://162.243.207.23:8003/home/signup')
 	# 	driver.find_element_by_id("id_username").send_keys("steven08")
 	# 	driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
