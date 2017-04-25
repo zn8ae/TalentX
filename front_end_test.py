@@ -11,12 +11,13 @@ class WebTestCase(unittest.TestCase):
 			desired_capabilities=DesiredCapabilities.FIREFOX)
 		self.driver.implicitly_wait(7)
 		self.address = 'http://' + str(sys.argv[2]) + ':8003'
+		#pass
 
 
 	def test_signup(self):
 		selenium = self.driver
-        selenium.get(self.address)
-        
+		selenium.get(self.address)
+
 		# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
 		# driver.get('http://google.com')
 
