@@ -30,7 +30,8 @@ script:
   - docker exec -it talentx_models_1 bash -c "python manage.py test"
   - pip install selenium
   - pip install chromedriver
-  - pip install chromedriver
+  - cd /home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/
+  - ls chromedriver
   - python front_end_test.py 
 after_script:
   - docker-compose stop
