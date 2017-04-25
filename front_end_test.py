@@ -2,28 +2,34 @@ from selenium import webdriver
 import unittest
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+# driver.get("localhost:8003")
+
+
+# firefox_capabilities = DesiredCapabilities.FIREFOX
+# firefox_capabilities['marionette'] = True
+# driver = webdriver.Firefox(capabilities=firefox_capabilities)
 class WebTestCase(unittest.TestCase):
 
 	def setup(self):
 		pass
 
 	def test_signup(self):
-		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
-		url = 'http://127.0.0.1:8003'
-		driver.get(url)
-		driver.find_element_by_name("signup").click()
-		driver.find_element_by_id("id_username").send_keys("steven08")
-		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
-		driver.find_element_by_id("id_last_name").send_keys("qu")
-		driver.find_element_by_id("id_first_name").send_keys("steven")
-		driver.find_element_by_id("id_password").send_keys("stevenqu")
-		driver.find_element_by_id("id_password2").send_keys("stevenqu")
-		driver.find_element_by_id("submit").click()
-		find = driver.find_element_by_id("success")
-		self.assertNotEquals(find, None)
+		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+		driver.get('http://google.com')
+		# driver.find_element_by_name("signup").click()
+		# driver.find_element_by_id("id_username").send_keys("steven08")
+		# driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
+		# driver.find_element_by_id("id_last_name").send_keys("qu")
+		# driver.find_element_by_id("id_first_name").send_keys("steven")
+		# driver.find_element_by_id("id_password").send_keys("stevenqu")
+		# driver.find_element_by_id("id_password2").send_keys("stevenqu")
+		# driver.find_element_by_id("submit").click()
+		# find = driver.find_element_by_id("success")
+		# self.assertNotEquals(find, None)
 
 	# def test_signup(self):
-	# 	driver = webdriver.Chrome('/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/chromedriver')
+	# 	driver = webdriver.Chrome()
 	# 	url = 'localhost:8003'
 	# 	driver.get(url)
 	# 	driver.find_element_by_name("signup").click()
