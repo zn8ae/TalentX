@@ -67,9 +67,9 @@ batch:
     command: bash -c "python /app/batch/main.py"
 
 selenium:
-    #image: selenium/standalone-firefox:3.3.1-cesium
+    image: selenium/standalone-firefox:3.3.1-cesium
     #image: selenium/standalone-chrome
-    image: selenium/standalone-chrome:3.4.0-bismuth
+    #image: selenium/standalone-chrome:3.4.0-bismuth
     container_name: selenium
     ports:
         - "4444:4444"

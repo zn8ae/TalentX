@@ -18,7 +18,7 @@ class WebTestCase(unittest.TestCase):
 		pass
 
 	def test_signup(self):
-		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
+		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
 		driver.get('http://162.243.207.23:8003/')
 		driver.find_element_by_name("signup").click()
 		driver.find_element_by_id("id_username").send_keys("steven08")
@@ -28,6 +28,7 @@ class WebTestCase(unittest.TestCase):
 		driver.find_element_by_id("id_password").send_keys("stevenqu")
 		driver.find_element_by_id("id_password2").send_keys("stevenqu")
 		driver.find_element_by_id("submit").click()
+		#driver.find_element_by_id("success")
 
 
 	# def test_main_page(self): #OK!!!
