@@ -19,7 +19,7 @@ class WebTestCase(unittest.TestCase):
 		selenium.get(self.address)
 
 		# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		# driver.get('http://google.com')
+		# driver.get('http://172.17.0.7:8003')
 
 		# driver.find_element_by_name("signup").click()
 		# driver.find_element_by_id("id_username").send_keys("steven08")
