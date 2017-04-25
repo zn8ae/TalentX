@@ -1,22 +1,25 @@
 from selenium import webdriver
 import unittest
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import sys
 
-# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-# driver.get("localhost:8003")
-
-
-# firefox_capabilities = DesiredCapabilities.FIREFOX
-# firefox_capabilities['marionette'] = True
-# driver = webdriver.Firefox(capabilities=firefox_capabilities)
 class WebTestCase(unittest.TestCase):
 
 	def setup(self):
-		pass
+		self.driver = webdriver.Remote(
+			command_executor='http://' + str(sys.argv[1]) + ':4444/wd/hub',
+			desired_capabilities=DesiredCapabilities.FIREFOX)
+		self.driver.implicitly_wait(7)
+		self.address = 'http://' + str(sys.argv[2]) + ':8003'
+
 
 	def test_signup(self):
-		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://google.com')
+		selenium = self.driver
+        selenium.get(self.address)
+        
+		# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+		# driver.get('http://google.com')
+
 		# driver.find_element_by_name("signup").click()
 		# driver.find_element_by_id("id_username").send_keys("steven08")
 		# driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
