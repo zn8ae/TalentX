@@ -24,7 +24,7 @@ before_script:
   - docker-compose up -d
   - pip install selenium
   - pip install chromedriver
-  - apt-get google-chrome-stable
+ # - apt-get google-chrome-stable
   - sleep 10 # need to give time for mysql to start
   - docker ps -a
   - docker start talentx_models_1
