@@ -27,9 +27,7 @@ before_script:
   - docker start talentx_models_1
 #
 script:
-  - >
-    docker exec -it talentx_models_1 bash -c
-    "python manage.py test"
+  - docker exec -it talentx_models_1 bash -c "python manage.py test"
   - pip install selenium
   - pip install chromedriver
   - python front_end_test.py 
