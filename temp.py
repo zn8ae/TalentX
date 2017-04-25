@@ -6,20 +6,14 @@ import sys
 class WebTestCase(unittest.TestCase):
 
 	def setup(self):
-		self.driver = webdriver.Remote(
-			command_executor='http://' + str(sys.argv[1]) + ':4444/wd/hub',
-			desired_capabilities=DesiredCapabilities.FIREFOX)
-		self.driver.implicitly_wait(7)
-		self.address = 'http://' + str(sys.argv[2]) + ':8003'
-		#pass
+
+		pass
 
 
 	def test_signup(self):
-		selenium = self.driver
-		selenium.get(self.address)
 
-		# driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		# driver.get('http://172.17.0.7:8003')
+		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+		driver.get('http://talentx_web_1:8003/')
 
 		# driver.find_element_by_name("signup").click()
 		# driver.find_element_by_id("id_username").send_keys("steven08")
@@ -99,9 +93,6 @@ class WebTestCase(unittest.TestCase):
 	def tearDown(self):
 		pass #nothing to tear down
 
-# if __name__ =='__main__':
-# 	unittest.main()
-if __name__ == "__main__":
-    opt = sys.argv[1]
-    opt2 = sys.argv[2]
-    unittest.main(argv=[opt])
+if __name__ =='__main__':
+	unittest.main()
+
