@@ -48,11 +48,12 @@
             <!-- <input type="text" value="search" size = "30"> -->
          
           </form>
-          
+
+
           <form class="navbar-form navbar-right">
             {% if not is_logged_in %}
-            <button name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'signup' %}'" >Sign up</button>
-            <button name = "signin" type="button" class="btn btn-success" onclick="location.href='{% url 'signin' %}'">Sign in</button>
+            <button id="signup" name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'signup' %}'" >Sign up</button>
+            <button id = "signin"name = "signin" type="button" class="btn btn-success" onclick="location.href='{% url 'signin' %}'">Sign in</button>
             {% endif %}
             {% if is_logged_in %}
             <button name = "signout" type="button" class="btn btn-success" onclick="location.href='{% url 'signout' %}'">Sign out</button>

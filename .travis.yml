@@ -29,6 +29,7 @@ before_script:
 script:
   - docker exec -it talentx_models_1 bash -c "python manage.py test"
   - pip install selenium
+  #3.3.0
   # - pip install chromedriver
   # - cd /home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/
   # - ls chromedriver
@@ -37,7 +38,7 @@ script:
   # - WEB_APP_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' talentx_web_1)
   # - SELENIUM_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' selenium)
   # - python front_end_test.py ${SELENIUM_IP} ${WEB_APP_IP}
-  #- python temp.py 
+  - python travis_front_test.py
 after_script:
   - docker-compose stop
   - docker stop mysql
