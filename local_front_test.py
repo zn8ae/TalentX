@@ -16,22 +16,22 @@ class WebTestCase(unittest.TestCase):
 	def setup(self):
 		pass
 
-	def test_signup(self): 
+	def test_01_signup(self): 
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/home/signup/")
-		driver.find_element_by_id("id_username").send_keys("steven883")
+		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
 		driver.find_element_by_id("id_last_name").send_keys("qu")
 		driver.find_element_by_id("id_first_name").send_keys("steven")
-		driver.find_element_by_id("id_password").send_keys("stevenqu")
-		driver.find_element_by_id("id_password2").send_keys("stevenqu")
+		driver.find_element_by_id("id_password").send_keys("qhw")
+		driver.find_element_by_id("id_password2").send_keys("qhw")
 		driver.find_element_by_id("submit_signup").click()
 		wait = WebDriverWait(driver, 20)
 		element = wait.until(EC.element_to_be_clickable((By.ID, 'success')))
 		driver.find_element_by_id("success")
 		driver.quit()
 
-	def test_login(self): 
+	def test_02_login(self): 
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/home/signin/")
 		driver.find_element_by_id("id_username").send_keys("qhw")
@@ -42,7 +42,7 @@ class WebTestCase(unittest.TestCase):
 		self.assertEquals(driver.title, "Create New Listing")
 		driver.quit()
 
-	def test_create_skill(self):
+	def test_03_create_skill(self):
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/home/signin/")
 		driver.find_element_by_id("id_username").send_keys("qhw")
@@ -61,7 +61,7 @@ class WebTestCase(unittest.TestCase):
 		driver.quit()
 
 
-	def test_signout(self):
+	def test_04_signout(self):
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/home/signin/")
 		driver.find_element_by_id("id_username").send_keys("qhw")
@@ -76,7 +76,7 @@ class WebTestCase(unittest.TestCase):
 		self.assertNotEquals(find, None)
 		driver.quit()
 
-	def test_search(self):
+	def test_05_search(self):
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/")
 		driver.find_element_by_id("id_search").send_keys("fly")
@@ -85,7 +85,7 @@ class WebTestCase(unittest.TestCase):
 		self.assertEquals(driver.title, "Search Detail")
 		driver.quit()
 
-	def test_detail(self):
+	def test_06_detail(self):
 		driver = webdriver.Firefox()
 		driver.get("http://localhost:8003/")
 		driver.find_element_by_id("id_search").send_keys("fly")
