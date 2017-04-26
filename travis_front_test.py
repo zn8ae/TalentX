@@ -91,7 +91,7 @@ class WebTestCase(unittest.TestCase):
 		driver.find_element_by_id("id_search").send_keys("fly")
 		driver.find_element_by_id("submit").click()
 		wait = WebDriverWait(driver, 20)
-	 	element = wait.until(EC.element_to_be_clickable((By.NAME, 'view')))
+		element = wait.until(EC.element_to_be_clickable((By.NAME, 'view')))
 		find = driver.find_element_by_css_selector("a[href*='detail']")
 		driver.find_element_by_css_selector("a[href*='detail']").click()
 		self.assertNotEquals(find, None)
