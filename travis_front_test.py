@@ -19,12 +19,12 @@ class WebTestCase(unittest.TestCase):
 	def test_01_signup(self): 
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
 		driver.get('http://162.243.207.23:8003/home/signup/')
-		driver.find_element_by_id("id_username").send_keys("steven883")
+		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
 		driver.find_element_by_id("id_last_name").send_keys("qu")
 		driver.find_element_by_id("id_first_name").send_keys("steven")
-		driver.find_element_by_id("id_password").send_keys("stevenqu")
-		driver.find_element_by_id("id_password2").send_keys("stevenqu")
+		driver.find_element_by_id("id_password").send_keys("qhw")
+		driver.find_element_by_id("id_password2").send_keys("qhw")
 		driver.find_element_by_id("submit_signup").click()
 		wait = WebDriverWait(driver, 20)
 		element = wait.until(EC.element_to_be_clickable((By.ID, 'success')))
@@ -82,7 +82,7 @@ class WebTestCase(unittest.TestCase):
 		driver.find_element_by_id("id_search").send_keys("fly")
 		driver.find_element_by_id("submit").click()
 		time.sleep(2)
-		self.assertEquals(driver.title, "Search Detail")
+		self.assertEqual(driver.title, "Search Detail")
 		driver.quit()
 
 	def test_06_detail(self):
