@@ -4,8 +4,8 @@ models:
       -  mysql:db
     volumes:
       - ./models/:/app
-    ports:
-      - "8001:8000"
+    # ports:
+    #   - "8001:8000"
     command: bash -c "pip install selenium && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata db.json && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./models/wsgi.py"
 
 exp:
@@ -16,8 +16,8 @@ exp:
       -  es
     volumes:
       - ./exp/:/app
-    ports:
-      - "8002:8000"
+    # ports:
+    #   - "8002:8000"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./exp/wsgi.py"
 
 web:
@@ -26,8 +26,8 @@ web:
       -  exp:exp-api
     volumes:
       - ./web/:/app
-    ports:
-      - "8003:8000"
+    # ports:
+    #   - "8003:8000"
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
@@ -37,8 +37,8 @@ web2:
       -  exp:exp-api
     volumes:
       - ./web/:/app
-    ports:
-      - "8004:8000"
+    # ports:
+    #   - "8004:8000"
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
@@ -81,4 +81,4 @@ haproxy:
     volumes:
       - ./:/usr/local/etc/haproxy
     ports:
-      - "8080:80"
+      - "80:80"
