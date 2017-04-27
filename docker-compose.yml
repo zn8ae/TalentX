@@ -26,8 +26,8 @@ web:
       -  exp:exp-api
     volumes:
       - ./web/:/app
-    # ports:
-    #   - "8003:8000"
+    ports:
+      - "8003:8000"
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
@@ -37,8 +37,8 @@ web2:
       -  exp:exp-api
     volumes:
       - ./web/:/app
-    # ports:
-    #   - "8004:8000"
+    ports:
+      - "8004:8000"
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
@@ -81,4 +81,4 @@ haproxy:
     volumes:
       - ./:/usr/local/etc/haproxy
     ports:
-      - "80:80"
+      - "8080:80"
