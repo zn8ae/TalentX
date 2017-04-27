@@ -51,18 +51,21 @@
     <section align="center" id="contact" style="padding-top: 100px;
     padding-bottom: 40px;">
       <h2>Login</h2>
+      <button id = "baba" name ="mama" type="submit" class="btn btn-default" >Submit</button>
       <div class="table-form" style="padding-top: 30px;
     padding-bottom: 20px;">
-        <form action="" method="post">{% csrf_token %}
+        <form name = "signin_form" action="" method="post">{% csrf_token %}
         {{ form.as_p }} 
         Note: All the fields above are required
         <br><br>
         {% if error is not None %}
         <p style="color:red;">Error : {{ error }}</p>
         {% endif %}
-        <input id="submit" type="submit" value="Submit"/>
+        <!-- <input id="btn_submit" class="button button_main" type="submit" value="submit"/> -->
+        <button type="submit" class="btn btn-default" id="submit_login">Submit</button>
+        </form>
       </div>
-      <a onclick="location.href='http://localhost:8003/signup/'">Register</a>
+      <a id = "register" onclick="location.href='http://localhost:8003/signup/'">Register</a>
       <br>
       <a >Forget you password?</a>
     </section>

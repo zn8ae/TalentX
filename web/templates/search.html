@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>TalentX</title>
+    <title>Search Detail</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -48,11 +48,11 @@
           </form>
           <form class="navbar-form navbar-right">
             {% if not is_logged_in %}
-            <button type="button" class="btn btn-success" onclick="location.href='{% url 'signup' %}'" >Sign up</button>
-            <button type="button" class="btn btn-success" onclick="location.href='{% url 'signin' %}'">Sign in</button>
+            <button id="signup" name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'signup' %}'" >Sign up</button>
+            <button id = "signin"name = "signin" type="button" class="btn btn-success" onclick="location.href='{% url 'signin' %}'">Sign in</button>
             {% endif %}
             {% if is_logged_in %}
-            <button type="button" class="btn btn-success" onclick="location.href='{% url 'signout' %}'">Sign out</button>
+            <button id = "signout"name = "signout" type="button" class="btn btn-success" onclick="location.href='{% url 'signout' %}'">Sign out</button>
             {% endif %}
           </form>
         </div><!--/.navbar-collapse -->
@@ -87,7 +87,7 @@
           </div>
           <div class="col-md-3" align = "center"> 
             <!-- <a name = "view" style="padding-bot: 80px;"href="http://localhost:8003/home/detail/{{r.id}}"><p>View</p></a>  -->
-            <a name = "view" style="padding-bot: 80px;"
+            <a id = "view" name = "view" style="padding-bot: 80px;"
             href="/home/detail/{{r.id}}"><p>View</p></a> 
           </div>
         </div>
