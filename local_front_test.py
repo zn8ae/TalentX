@@ -18,9 +18,9 @@ class WebTestCase(unittest.TestCase):
 
 	def test_01_signup(self): 
 		driver = webdriver.Firefox()
-		driver.get("http://107.170.71.126:8080/home/signup/")
+		driver.get('http://107.170.71.126:8080/home/signup/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
-		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
+		driver.find_element_by_id("id_email").send_keys("steven123@gmail.com")
 		driver.find_element_by_id("id_last_name").send_keys("qu")
 		driver.find_element_by_id("id_first_name").send_keys("steven")
 		driver.find_element_by_id("id_password").send_keys("qhw")
