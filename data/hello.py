@@ -1,4 +1,23 @@
 from pyspark import SparkContext
+import MySQLdb
+
+# Open database connection
+db = MySQLdb.connect(host="db",passwd="$3cureUS",db="cs4501")
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+try:
+	# Prepare SQL query to INSERT a record into the database.
+	sql = "delete from users_recommendations where id > 0;"
+	# Execute the SQL command
+	cursor.execute(sql)
+	# Commit your changes in the database
+	db.commit()
+except:
+	# Rollback in case there is any error
+	db.rollback()
+
+# disconnect from server
+db.close()
 
 sc = SparkContext("spark://spark-master:7077", "PopularItems")
 

@@ -34,3 +34,6 @@ class Authenticator(models.Model):
 	username = models.CharField(max_length = 200, default="")
 	authenticator = models.CharField(max_length = 300, default="")
 	date_created = models.CharField(max_length = 100, default="")
+
+class Recommendations(models.Model):
+	recommended_items = models.CharField(max_length = 200, default="")
