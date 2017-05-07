@@ -71,6 +71,9 @@ def getSkill(request):
     skilldata = {'sid':sid}
     r = requests.post('http://models-api:8000/skills/lookup',skilldata)
     response = r.json()
+    kp2 = KafkaProducer(bootstrap_servers='kafka:9092')
+    context = {'id':response["id"], 'username':response["username"]}
+    kp2.send('co-views', json.dumps(context).encode('utf-8'))
     return JsonResponse(response)
 #New
 @csrf_exempt
