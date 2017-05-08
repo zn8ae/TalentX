@@ -4,8 +4,8 @@ models:
       -  mysql:db
     volumes:
       - ./models/:/app
-    ports:
-      - "8001:8000"
+    # ports:
+    #   - "8001:8000"
     command: bash -c "pip install selenium && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata db.json && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./models/wsgi.py"
 
 exp:
@@ -16,8 +16,8 @@ exp:
       -  es
     volumes:
       - ./exp/:/app
-    ports:
-      - "8002:8000"
+    # ports:
+    #   - "8002:8000"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./exp/wsgi.py"
 
 web:
