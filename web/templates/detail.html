@@ -71,9 +71,6 @@
       <!-- <h3> Search Result <h2> -->
       <div style="padding-left: 450px;">
       <h2>Skill Detail<h2>
-<!--           <p>{{ mission.username }}</p>
-          <p>{{ mission.desc }}</p>
-          <p>{{ mission.price }}</p> -->
       </div>
       <h3>Skill Name:</h3> 
         <h5>{{data.sname}}</h5>
@@ -87,8 +84,32 @@
     </div>
 
 
+      <hr>
+      <div align = "center">
+        <h2>People who viewed this skill may also like</h2>
+      </div>
+      <div class = "container"   >
+        
+        <div class="col-md-4" align = "left"> <h3> Skill Name </h3> </div>
+        <div class="col-md-4" align = "center"> <h3> Provider </h3> </div>
+        <div class="col-md-4" align = "right"> <h3> Price </h3> </div>
+        
+        <a href="/home/detail/{{data.id}}" style="color: #000000" >
+          <div onmouseover="this.style.background='#CCCCCC';" onmouseout="this.style.background='white';" class="col-md-4" align = "left" >
+            <h5>{{data.sname}}</h5>
+          </div> 
+        </a>
+          <div class="col-md-4" align = "center">
+            <h5>{{data.username}} </h5>
+          </div>
+          <div class="col-md-4" align = "right">
+            <h5>{{data.price}}</h5>
+          </div>
+        
+      </div>
 
       <hr>
+
 
       <footer>
         <p>&copy; 2016 Company, Inc.</p>
