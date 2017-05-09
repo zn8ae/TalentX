@@ -214,17 +214,18 @@ def search(request):
 def detail(request, sid):
 	auth = request.COOKIES.get('auth')
 	if auth:
+		username=request.COOKIES.get("username")
 		is_logged_in = True
 	else:
 		is_logged_in = False
 	form = SearchForm()
 	#get detail about this skill
-	context = {"sid":sid}
+	context = {"sid":sid, "username":username}
 	r = requests.post('http://exp-api:8000/userdata/getSkill/',context)
 	data = r.json()
 	#get recommend skills using sid
-	temp = {"sid":"1"}
-	r2 = requests.post('http://exp-api:8000/userdata/getRec/',temp)
+	context2 = {"sid":sid}
+	r2 = requests.post('http://exp-api:8000/userdata/getRec/',context2)
 	data2 = r2.json()
 
 	if data2["status"]!= "error":
