@@ -88,7 +88,8 @@
       <div align = "center">
         <h2>People who viewed this skill may also like</h2>
       </div>
-      <div class = "container"   >
+      {% if recomm != "NULL" %}
+      <div class = "container">
         
         <div class="col-md-4" align = "left"> <h3> Skill Name </h3> </div>
         <div class="col-md-4" align = "center"> <h3> Provider </h3> </div>
@@ -109,6 +110,7 @@
         {% endfor %}
         
       </div>
+      {% endif %}
 
       <hr>
 

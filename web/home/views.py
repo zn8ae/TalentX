@@ -227,17 +227,17 @@ def detail(request, sid):
 	r2 = requests.post('http://exp-api:8000/userdata/getRec/',temp)
 	data2 = r2.json()
 
-	#get recommended skills too
-	skill_list = data2["recomm"].split(',')
-	recomm = []
-	for sid in skill_list:
-		content = {"sid":sid}
-		r3 = requests.post('http://exp-api:8000/userdata/getSkill/',content)
-		data3 = r3.json()
-		recomm.append(data3)
-	
-	return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in,'recomm':recomm})
-
-
-
-
+	if data2["status"]!= "error":
+		#get recommended skills too
+		skill_list = data2["recomm"].split(',')
+		recomm = []
+		for sid in skill_list:
+			content = {"sid":sid}
+			r3 = requests.post('http://exp-api:8000/userdata/getSkill/',content)
+			data3 = r3.json()
+			recomm.append(data3)
+		
+		return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in,'recomm':recomm})
+	else:
+		return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in,'recomm':"NULL"})
+		
