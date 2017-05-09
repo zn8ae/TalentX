@@ -75,6 +75,16 @@ def getSkill(request):
     context = {'id':response["id"], 'username':response["username"]}
     kp2.send('co-views', json.dumps(context).encode('utf-8'))
     return JsonResponse(response)
+
+@csrf_exempt
+def getRec(request):
+    context = request.POST.copy()
+    sid=context["sid"]
+    skilldata = {'sid':sid}
+    r = requests.post('http://models-api:8000/skills/recommend',skilldata)
+    response = r.json()
+    return JsonResponse(response)
+
 #New
 @csrf_exempt
 def signin(request):

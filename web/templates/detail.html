@@ -94,17 +94,19 @@
         <div class="col-md-4" align = "center"> <h3> Provider </h3> </div>
         <div class="col-md-4" align = "right"> <h3> Price </h3> </div>
         
-        <a href="/home/detail/{{data.id}}" style="color: #000000" >
+        {% for r in recomm %}
+        <a href="/home/detail/{{r.id}}" style="color: #000000" >
           <div onmouseover="this.style.background='#CCCCCC';" onmouseout="this.style.background='white';" class="col-md-4" align = "left" >
-            <h5>{{data.sname}}</h5>
+            <h5>{{r.sname}}</h5>
           </div> 
         </a>
           <div class="col-md-4" align = "center">
-            <h5>{{data.username}} </h5>
+            <h5>{{r.username}} </h5>
           </div>
           <div class="col-md-4" align = "right">
-            <h5>{{data.price}}</h5>
+            <h5>{{r.price}}</h5>
           </div>
+        {% endfor %}
         
       </div>
 

@@ -218,14 +218,25 @@ def detail(request, sid):
 	else:
 		is_logged_in = False
 	form = SearchForm()
-	# username='Zihan'
-	# r = requests.get('http://exp-api:8000/userdata/' + username)
-	# data = r.json()
+	#get detail about this skill
 	context = {"sid":sid}
 	r = requests.post('http://exp-api:8000/userdata/getSkill/',context)
 	data = r.json()
+	#get recommend skills using sid
+	temp = {"sid":"1"}
+	r2 = requests.post('http://exp-api:8000/userdata/getRec/',temp)
+	data2 = r2.json()
+
+	#get recommended skills too
+	skill_list = data2["recomm"].split(',')
+	recomm = []
+	for sid in skill_list:
+		content = {"sid":sid}
+		r3 = requests.post('http://exp-api:8000/userdata/getSkill/',content)
+		data3 = r3.json()
+		recomm.append(data3)
 	
-	return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in})
+	return render_to_response('templates/detail.html',{'form':form,'data':data,'is_logged_in': is_logged_in,'recomm':recomm})
 
 
 

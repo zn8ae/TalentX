@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^signin/', views.signin,name='signin'),
     url(r'^createSkill/', views.createSkill,name='createskill'),
     url(r'^getSkill/', views.getSkill,name='getskill'),
+    url(r'^getRec/', views.getRec,name='getrecomm'),
     url(r'^search/', views.search,name='search'),
     url(r'^(?P<username>\w+)', views.userdata, name='lookupuser'),
 ]

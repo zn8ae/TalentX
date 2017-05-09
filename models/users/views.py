@@ -51,6 +51,21 @@ def lookup_skill(request):
 		'price':s.price,
 		})
 
+@csrf_exempt
+def recommend_skill(request):
+	if request.method != 'POST':
+		return JsonResponse({'status':'error', 'msg':"must make POST request"})
+	sid=request.POST.get("sid")
+	try:
+		s = models.Recommendations.objects.get(pk=sid)
+	except models.Recommendations.DoesNotExist:
+		return JsonResponse({'status':'error', 'msg':"Skill does not exist"})
+	return JsonResponse({
+		'status':'success',
+		'id':s.pk,
+		'recomm':s.recommended_items,
+		})
+
 
 @csrf_exempt
 def create_user(request):
