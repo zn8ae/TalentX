@@ -83,6 +83,9 @@ print("Pairs with 3 or more user")
 for pair, count in output:
 	print("pair: %s, count: %s" % (pair, count))
 
+#need to do one more map-reduce to group pairs by 
+
+
 sc.stop()
 
 
