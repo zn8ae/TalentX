@@ -98,13 +98,15 @@ print("Final Recommendation Table")
 for user, pages in output:
 	print("item: %s, recommendations: %s" % (user, list(pages)))
 	#put into db
+	u = str(user)
+	p = ','.join(map(str, pages))
 	try:
-	# Prepare SQL query to INSERT a record into the database.
-	sql = "insert into users_recommendations VALUES (%s, %s)" % (user, pages)
-	# Execute the SQL command
-	cursor.execute(sql)
-	# Commit your changes in the database
-	db.commit()
+		# Prepare SQL query to INSERT a record into the database.
+		sql = "insert into users_recommendations VALUES (%s, %s);"
+		# Execute the SQL command
+		cursor.execute(sql,(u,p))
+		# Commit your changes in the database
+		db.commit()
 	except:
 		# Rollback in case there is any error
 		db.rollback()
