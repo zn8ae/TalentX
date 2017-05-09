@@ -82,7 +82,19 @@ def getRec(request):
     sid=context["sid"]
     skilldata = {'sid':sid}
     r = requests.post('http://models-api:8000/skills/recommend',skilldata)
-    response = r.json()
+    data2 = r.json()
+    if data2["status"]!= "error":
+        #get recommended skills too
+        skill_list = data2["recomm"].split(',')
+        recomm = []
+        for sid in skill_list:
+            content = {"sid":sid}
+            r3 = requests.post('http://models-api:8000/skills/lookup',content)
+            data3 = r3.json()
+            recomm.append(data3)
+        response = {"status":"success","recomm":recomm}
+    else:
+        response = {"status":"error"}
     return JsonResponse(response)
 
 #New
