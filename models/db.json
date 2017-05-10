@@ -1,0 +1,6 @@
+[{"model": "users.user", "pk": 1, "fields": {"username": "Zihan", "first_name": "Zihan", "last_name": "Ni", "title": "Software Engineer", "company": "Google", "phone": "4342704634", "email": "zn8ae@virginia.edu"}}, 
+{"model": "users.user", "pk": 2, "fields": {"username": "hq5rc", "first_name": "Steven", "last_name": "Qu", "title": "Bouncer", "company": "Alibaba", "phone": "4349624563", "email": "hq5rc@virginia.edu"}}, 
+{"model": "users.user", "pk": 3, "fields": {"username": "zz3px", "first_name": "Zhiwei", "last_name": "Zhang", "title": "chef", "company": "UVA", "phone": "4344660294", "email": "zz3px@virginia.edu"}}, 
+{"model": "users.user", "pk": 4, "fields": {"username": "John", "first_name": "John", "last_name": "Legend", "title": "", "company": "", "phone": "", "email": "abc123@example.com"}}, 
+{"model": "users.mission", "pk": 1, "fields": {"username": "Zihan", "mname": "Machine Learning Problem", "desc": "We need a machine learning expert who can help us build a new system!", "price": 50000}}, 
+{"model": "users.mission", "pk": 2, "fields": {"username": "Zhiwei", "mname": "Start-up Partner", "desc": "Greate start-up idea. Fully funded. Need like-minded partner!", "price": 0}}]
