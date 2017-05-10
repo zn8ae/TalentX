@@ -16,9 +16,13 @@ class WebTestCase(unittest.TestCase):
 	def setup(self):
 		pass
 
+	# def test(self):
+	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+	# 	driver.get('http://localhost:8080/')
+
 	def test_01_signup(self): 
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://107.170.71.126:8080/home/signup/')
+		driver.get('http://localhost:8080/home/signup/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
 		driver.find_element_by_id("id_last_name").send_keys("qu")

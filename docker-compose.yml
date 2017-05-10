@@ -94,7 +94,7 @@ haproxy:
       - web:web
       - web2:web2
     ports:
-      - "8080:80"
+      - "80:80"
       
 spark-master:
   image: gettyimages/spark
