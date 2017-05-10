@@ -3,24 +3,6 @@ import itertools
 import MySQLdb
 
 
-# Open database connection
-db = MySQLdb.connect(host="db",passwd="$3cureUS",db="cs4501")
-# prepare a cursor object using cursor() method
-cursor = db.cursor()
-try:
-	# Prepare SQL query to INSERT a record into the database.
-	sql = "delete from users_recommendations where id > 0;"
-	# Execute the SQL command
-	cursor.execute(sql)
-	# Commit your changes in the database
-	db.commit()
-except:
-	# Rollback in case there is any error
-	db.rollback()
-
-# disconnect from server
-db.close()
-
 # map reduce
 sc = SparkContext("spark://spark-master:7077", "PopularItems")
 
@@ -82,11 +64,13 @@ print("Pairs with 3 or more user")
 for pair, count in output:
 	print("pair: %s, count: %s" % (pair, count))
 
+
 temp = significant_pairs.keys()
 output = temp.collect()
 print("Temp Table")
 for pair, count in output:
 	print("pair: %s, count: %s" % (pair, count))
+
 
 # Open database connection
 db = MySQLdb.connect(host="db",passwd="$3cureUS",db="cs4501")
@@ -94,6 +78,16 @@ db = MySQLdb.connect(host="db",passwd="$3cureUS",db="cs4501")
 cursor = db.cursor()
 new = temp.groupByKey().mapValues(lambda pages: sorted(pages))
 output = new.collect()
+try:
+	# Prepare SQL query to INSERT a record into the database.
+	sql = "delete from users_recommendations where id > 0;"
+	# Execute the SQL command
+	cursor.execute(sql)
+	# Commit your changes in the database
+	db.commit()
+except:
+	# Rollback in case there is any error
+	db.rollback()
 print("Final Recommendation Table")
 for user, pages in output:
 	print("item: %s, recommendations: %s" % (user, list(pages)))
