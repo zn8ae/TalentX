@@ -33,3 +33,9 @@ Project 5
 
 3. As a user, I want to view details from the search result page.
 
+Project 7
+
+1. As a user, I want to see recommended items. 
+
+2. As a user, I want the website to record my viewed items. 
+
