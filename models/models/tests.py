@@ -9,7 +9,21 @@ class UserLookupTest(TestCase):
     def setUp(self):
         #User.objects.create(uname = 'steven')
         pass
-     
+
+    def test_recommendation_notexist(self):
+        #response = self.client.post('/skills/recommend/',{'sid':'1'})
+        response = self.client.post('/skills/recommend/',{'sid':'99999'})
+
+        res = response.json()
+        output = {'msg': 'Skill does not exist', 'status': 'error'}
+        self.assertEquals(output,res)
+
+    def test_recommendation(self):
+
+        response = self.client.post('/skills/recommend/',{'sid':'1'})
+        res = response.json()
+        output = {'id': 1, 'recomm': 'Zhiwei', 'status': 'success'}
+        self.assertEquals(output,res)
 
     def test_lookup_user(self):
         #response = self.client.get(reverse('look up a user via GET', kwargs={'pk':'1'}))
