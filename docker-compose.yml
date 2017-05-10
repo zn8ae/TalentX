@@ -31,16 +31,16 @@ web:
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
-# web2:
-#     image: tp33/django
-#     links:
-#       -  exp:exp-api
-#     volumes:
-#       - ./web/:/app
-#     ports:
-#       - "8004:8000"
-#     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
-#     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
+web2:
+    image: tp33/django
+    links:
+      -  exp:exp-api
+    volumes:
+      - ./web/:/app
+    ports:
+      - "8004:8000"
+    #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
+    command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
 kafka:
    image: spotify/kafka
@@ -85,13 +85,16 @@ selenium:
     volumes:
         - ./selenium:/dev/shm
 
-# haproxy:
-#     image: haproxy
-#     container_name: my-running-haproxy
-#     volumes:
-#       - ./:/usr/local/etc/haproxy
-#     ports:
-#       - "8080:80"
+haproxy:
+    image: haproxy
+    container_name: my-running-haproxy
+    volumes:
+      - ./:/usr/local/etc/haproxy
+    links:
+      - web:web
+      - web2:web2
+    ports:
+      - "8080:80"
       
 spark-master:
   image: gettyimages/spark
