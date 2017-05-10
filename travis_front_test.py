@@ -18,7 +18,7 @@ class WebTestCase(unittest.TestCase):
 
 	def test_01_signup(self): 
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/home/signup/')
+		driver.get('http://107.170.71.126:8080/home/signup/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
 		driver.find_element_by_id("id_last_name").send_keys("qu")
@@ -33,18 +33,18 @@ class WebTestCase(unittest.TestCase):
 
 	def test_02_login(self): 
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/home/signin/')
+		driver.get('http://107.170.71.126:8080/home/signin/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_password").send_keys("qhw")
 		driver.find_element_by_id("submit_login").click()
 		wait = WebDriverWait(driver, 20)
 		element = wait.until(EC.element_to_be_clickable((By.ID, 'id_skill')))
-		self.assertEquals(driver.title, "Create New Listing")
+		self.assertEqual(driver.title, "Create New Listing")
 		driver.quit()
 
 	def test_03_create_skill(self):
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/home/signin/')
+		driver.get('http://107.170.71.126:8080/home/signin/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_password").send_keys("qhw")
 		driver.find_element_by_id("submit_login").click()	
@@ -63,7 +63,7 @@ class WebTestCase(unittest.TestCase):
 
 	def test_04_signout(self):
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/home/signin/')
+		driver.get('http://107.170.71.126:8080/home/signin/')
 		driver.find_element_by_id("id_username").send_keys("qhw")
 		driver.find_element_by_id("id_password").send_keys("qhw")
 		driver.find_element_by_id("submit_login").click()	
@@ -73,12 +73,12 @@ class WebTestCase(unittest.TestCase):
 		#Back to the main page	
 		element = wait.until(EC.element_to_be_clickable((By.ID, 'signin')))
 		find = driver.find_element_by_name("signin")
-		self.assertNotEquals(find, None)
+		self.assertNotEqual(find, None)
 		driver.quit()
 
 	def test_05_search(self):
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/')
+		driver.get('http://107.170.71.126:8080/')
 		driver.find_element_by_id("id_search").send_keys("fly")
 		driver.find_element_by_id("submit").click()
 		time.sleep(2)
@@ -87,14 +87,14 @@ class WebTestCase(unittest.TestCase):
 
 	def test_06_detail(self):
 		driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-		driver.get('http://162.243.207.23:8003/')
+		driver.get('http://107.170.71.126:8080/')
 		driver.find_element_by_id("id_search").send_keys("fly")
 		driver.find_element_by_id("submit").click()
 		wait = WebDriverWait(driver, 20)
 		element = wait.until(EC.element_to_be_clickable((By.NAME, 'view')))
 		find = driver.find_element_by_css_selector("a[href*='detail']")
 		driver.find_element_by_css_selector("a[href*='detail']").click()
-		self.assertNotEquals(find, None)
+		self.assertNotEqual(find, None)
 		driver.quit()
 
 	def tearDown(self):
@@ -106,7 +106,7 @@ if __name__ =='__main__':
 
 	# def test_signup(self): #OK!!!
 	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
-	# 	driver.get('http://162.243.207.23:8003/home/signup')
+	# 	driver.get('http://107.170.71.126:8080/home/signup')
 	# 	driver.find_element_by_id("id_username").send_keys("steven08")
 	# 	driver.find_element_by_id("id_email").send_keys("steven@gmail.com")
 	# 	driver.find_element_by_id("id_last_name").send_keys("qu")
@@ -117,7 +117,7 @@ if __name__ =='__main__':
 
 	# def test_login(self): #OK!!!
 	# 	driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-	# 	driver.get('http://162.243.207.23:8003/home/signin')
+	# 	driver.get('http://107.170.71.126:8080/home/signin')
 	# 	driver.find_element_by_id("id_username").send_keys("steven03")
 	# 	driver.find_element_by_id("id_password").send_keys("stevenqu")
 	# 	driver.find_element_by_id("submit").click()
