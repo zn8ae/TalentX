@@ -1,0 +1,1536 @@
+17/05/10 17:32:26 INFO spark.SparkContext: Running Spark version 2.1.0
+17/05/10 17:32:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/05/10 17:32:27 INFO spark.SecurityManager: Changing view acls to: root
+17/05/10 17:32:27 INFO spark.SecurityManager: Changing modify acls to: root
+17/05/10 17:32:27 INFO spark.SecurityManager: Changing view acls groups to: 
+17/05/10 17:32:27 INFO spark.SecurityManager: Changing modify acls groups to: 
+17/05/10 17:32:27 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+17/05/10 17:32:28 INFO util.Utils: Successfully started service 'sparkDriver' on port 39215.
+17/05/10 17:32:28 INFO spark.SparkEnv: Registering MapOutputTracker
+17/05/10 17:32:28 INFO spark.SparkEnv: Registering BlockManagerMaster
+17/05/10 17:32:28 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/05/10 17:32:28 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/05/10 17:32:28 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-2e794a40-d7d4-4a6f-af70-801cc155f276
+17/05/10 17:32:28 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+17/05/10 17:32:28 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+17/05/10 17:32:28 INFO util.log: Logging initialized @3934ms
+17/05/10 17:32:28 INFO server.Server: jetty-9.2.z-SNAPSHOT
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3a5ac29c{/jobs,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@32663ec3{/jobs/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4edb29f2{/jobs/job,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2a9f407a{/jobs/job/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@463d2997{/stages,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@45ae87b5{/stages/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@522db24b{/stages/stage,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@261a4e4{/stages/stage/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2d3f44ae{/stages/pool,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c1dfd93{/stages/pool/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@231dbbb1{/storage,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2c547db2{/storage/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7b9956a2{/storage/rdd,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@81bdd27{/storage/rdd/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@46153fa6{/environment,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4923633b{/environment/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@783e10fb{/executors,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2e9a183e{/executors/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@419dea44{/executors/threadDump,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@137563f7{/executors/threadDump/json,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1bc400aa{/static,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@65e1a004{/,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4b80b936{/api,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@73d2016a{/jobs/job/kill,null,AVAILABLE}
+17/05/10 17:32:28 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48a89eea{/stages/stage/kill,null,AVAILABLE}
+17/05/10 17:32:28 INFO server.ServerConnector: Started ServerConnector@692bcdb5{HTTP/1.1}{0.0.0.0:4040}
+17/05/10 17:32:28 INFO server.Server: Started @4137ms
+17/05/10 17:32:28 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+17/05/10 17:32:28 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://172.17.0.7:4040
+17/05/10 17:32:29 INFO spark.SparkContext: Added file file:/tmp/data/hello.py at spark://172.17.0.7:39215/files/hello.py with timestamp 1494437549127
+17/05/10 17:32:29 INFO util.Utils: Copying /tmp/data/hello.py to /tmp/spark-9cf66a6d-dfd1-4152-a9d3-00464a623cd4/userFiles-0c9b94d4-3299-49c2-8a7f-10795fa32796/hello.py
+17/05/10 17:32:29 INFO client.StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+17/05/10 17:32:29 INFO client.TransportClientFactory: Successfully created connection to spark-master/172.17.0.7:7077 after 59 ms (0 ms spent in bootstraps)
+17/05/10 17:32:29 INFO cluster.StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20170510173229-0015
+17/05/10 17:32:29 INFO client.StandaloneAppClient$ClientEndpoint: Executor added: app-20170510173229-0015/0 on worker-20170510171004-172.17.0.10-8881 (172.17.0.10:8881) with 2 cores
+17/05/10 17:32:29 INFO cluster.StandaloneSchedulerBackend: Granted executor ID app-20170510173229-0015/0 on hostPort 172.17.0.10:8881 with 2 cores, 512.0 MB RAM
+17/05/10 17:32:29 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40447.
+17/05/10 17:32:29 INFO netty.NettyBlockTransferService: Server created on 172.17.0.7:40447
+17/05/10 17:32:29 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/05/10 17:32:29 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.17.0.7, 40447, None)
+17/05/10 17:32:29 INFO storage.BlockManagerMasterEndpoint: Registering block manager 172.17.0.7:40447 with 366.3 MB RAM, BlockManagerId(driver, 172.17.0.7, 40447, None)
+17/05/10 17:32:29 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.17.0.7, 40447, None)
+17/05/10 17:32:29 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.17.0.7, 40447, None)
+17/05/10 17:32:29 INFO client.StandaloneAppClient$ClientEndpoint: Executor updated: app-20170510173229-0015/0 is now RUNNING
+17/05/10 17:32:29 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4ef33042{/metrics/json,null,AVAILABLE}
+17/05/10 17:32:29 INFO cluster.StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+17/05/10 17:32:31 INFO memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 236.5 KB, free 366.1 MB)
+17/05/10 17:32:31 INFO memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 22.9 KB, free 366.0 MB)
+17/05/10 17:32:31 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.17.0.7:40447 (size: 22.9 KB, free: 366.3 MB)
+17/05/10 17:32:31 INFO spark.SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+17/05/10 17:32:32 INFO mapred.FileInputFormat: Total input paths to process : 1
+17/05/10 17:32:32 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:31
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Got job 0 (collect at /tmp/data/hello.py:31) with 2 output partitions
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (collect at /tmp/data/hello.py:31)
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Parents of final stage: List()
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (PythonRDD[2] at collect at /tmp/data/hello.py:31), which has no missing parents
+17/05/10 17:32:32 INFO memory.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 5.4 KB, free 366.0 MB)
+17/05/10 17:32:32 INFO memory.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.3 KB, free 366.0 MB)
+17/05/10 17:32:32 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.17.0.7:40447 (size: 3.3 KB, free: 366.3 MB)
+17/05/10 17:32:32 INFO spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:32 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (PythonRDD[2] at collect at /tmp/data/hello.py:31)
+17/05/10 17:32:32 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+17/05/10 17:32:33 INFO cluster.CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(null) (172.17.0.10:53006) with ID 0
+17/05/10 17:32:34 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, 172.17.0.10, executor 0, partition 0, PROCESS_LOCAL, 6078 bytes)
+17/05/10 17:32:34 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, 172.17.0.10, executor 0, partition 1, PROCESS_LOCAL, 6078 bytes)
+17/05/10 17:32:34 INFO storage.BlockManagerMasterEndpoint: Registering block manager 172.17.0.10:44453 with 93.3 MB RAM, BlockManagerId(0, 172.17.0.10, 44453, None)
+17/05/10 17:32:35 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.17.0.10:44453 (size: 3.3 KB, free: 93.3 MB)
+17/05/10 17:32:35 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.17.0.10:44453 (size: 22.9 KB, free: 93.3 MB)
+17/05/10 17:32:36 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 2490 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:36 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2632 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:36 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: ResultStage 0 (collect at /tmp/data/hello.py:31) finished in 4.037 s
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Job 0 finished: collect at /tmp/data/hello.py:31, took 4.334026 s
+Initial Data
+user: tp, page: 1
+user: zihan, page: 1
+user: zihan, page: 3
+user: zihan, page: 4
+user: nike, page: 36
+user: nike, page: 36
+user: zn8ae, page: 37
+user: nike, page: 46
+user: nike, page: 46
+user: nike, page: 46
+user: nike, page: 46
+user: nike, page: 46
+user: Zihan, page: 3
+user: Zihan, page: 4
+user: Zihan, page: 5
+user: nike, page: 47
+user: nike, page: 3
+user: zzpx, page: 4
+user: zzpx, page: 3
+user: tp, page: 3
+user: nike, page: 49
+user: Zihan, page: 4
+user: Zihan, page: 4
+user: Zihan, page: 4
+user: Zihan, page: 3
+user: Zihan, page: 3
+user: nike, page: 49
+user: nike, page: 50
+user: nike, page: 49
+user: nike, page: 50
+user: nike, page: 49
+user: sakura, page: 49
+user: sakura, page: 50
+user: zn8ae, page: 49
+user: zn8ae, page: 50
+user: zn8ae, page: 49
+user: zn8ae, page: 50
+user: nike, page: 59
+user: zn8ae, page: 60
+user: zn8ae, page: 59
+user: zn8ae, page: 61
+user: sakura, page: 59
+user: sakura, page: 60
+user: sakura, page: 61
+user: nike, page: 59
+user: nike, page: 62
+user: nike, page: 60
+user: nike, page: 61
+user: nike, page: 62
+user: nike, page: 60
+user: nike, page: 1
+user: sakura, page: 2
+user: sakura, page: 1
+user: zn8ae, page: 3
+user: zn8ae, page: 1
+user: zn8ae, page: 3
+user: zn8ae, page: 1
+user: zn8ae, page: 3
+user: zn8ae, page: 1
+user: zn8ae, page: 1
+user: zn8ae, page: 3
+user: zn8ae, page: 1
+user: nike, page: 1
+user: nike, page: 2
+user: nike, page: 2
+user: nike, page: 2
+user: nike, page: 1
+user: nike, page: 3
+user: nike, page: 1
+user: nike, page: 3
+user: sakura, page: 1
+user: sakura, page: 3
+user: nike, page: 2
+user: zn8ae, page: 2
+user: zn8ae, page: 1
+user: zn8ae, page: 2
+user: zn8ae, page: 3
+17/05/10 17:32:36 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:38
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Registering RDD 4 (distinct at /tmp/data/hello.py:37)
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Got job 1 (collect at /tmp/data/hello.py:38) with 2 output partitions
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Final stage: ResultStage 2 (collect at /tmp/data/hello.py:38)
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 1 (PairwiseRDD[4] at distinct at /tmp/data/hello.py:37), which has no missing parents
+17/05/10 17:32:36 INFO memory.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 9.1 KB, free 366.0 MB)
+17/05/10 17:32:36 INFO memory.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.7 KB, free 366.0 MB)
+17/05/10 17:32:36 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.17.0.7:40447 (size: 5.7 KB, free: 366.3 MB)
+17/05/10 17:32:36 INFO spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:36 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 1 (PairwiseRDD[4] at distinct at /tmp/data/hello.py:37)
+17/05/10 17:32:36 INFO scheduler.TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+17/05/10 17:32:36 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, 172.17.0.10, executor 0, partition 0, PROCESS_LOCAL, 6067 bytes)
+17/05/10 17:32:36 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, 172.17.0.10, executor 0, partition 1, PROCESS_LOCAL, 6067 bytes)
+17/05/10 17:32:36 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.17.0.10:44453 (size: 5.7 KB, free: 93.3 MB)
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 637 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 641 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: ShuffleMapStage 1 (distinct at /tmp/data/hello.py:37) finished in 0.653 s
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: looking for newly runnable stages
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: running: Set()
+17/05/10 17:32:37 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 2)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: failed: Set()
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Submitting ResultStage 2 (PythonRDD[7] at collect at /tmp/data/hello.py:38), which has no missing parents
+17/05/10 17:32:37 INFO memory.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 6.6 KB, free 366.0 MB)
+17/05/10 17:32:37 INFO memory.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.0 KB, free 366.0 MB)
+17/05/10 17:32:37 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.17.0.7:40447 (size: 4.0 KB, free: 366.3 MB)
+17/05/10 17:32:37 INFO spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (PythonRDD[7] at collect at /tmp/data/hello.py:38)
+17/05/10 17:32:37 INFO scheduler.TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5855 bytes)
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5855 bytes)
+17/05/10 17:32:37 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.17.0.10:44453 (size: 4.0 KB, free: 93.3 MB)
+17/05/10 17:32:37 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.17.0.10:53006
+17/05/10 17:32:37 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 154 bytes
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 220 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 245 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:37 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: ResultStage 2 (collect at /tmp/data/hello.py:38) finished in 0.244 s
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Job 1 finished: collect at /tmp/data/hello.py:38, took 1.004036 s
+Distinct Pairs
+user: nike, page: 50
+user: tp, page: 1
+user: zn8ae, page: 2
+user: nike, page: 2
+user: zihan, page: 4
+user: nike, page: 36
+user: nike, page: 49
+user: zn8ae, page: 50
+user: zzpx, page: 3
+user: zn8ae, page: 49
+user: zn8ae, page: 61
+user: nike, page: 61
+user: Zihan, page: 4
+user: sakura, page: 61
+user: sakura, page: 49
+user: tp, page: 3
+user: sakura, page: 50
+user: sakura, page: 2
+user: nike, page: 47
+user: sakura, page: 3
+user: nike, page: 59
+user: sakura, page: 60
+user: Zihan, page: 5
+user: zzpx, page: 4
+user: zn8ae, page: 3
+user: zn8ae, page: 37
+user: sakura, page: 59
+user: nike, page: 3
+user: zn8ae, page: 60
+user: Zihan, page: 3
+user: zihan, page: 1
+user: nike, page: 1
+user: nike, page: 62
+user: sakura, page: 1
+user: zn8ae, page: 1
+user: zihan, page: 3
+user: zn8ae, page: 59
+user: nike, page: 46
+user: nike, page: 60
+17/05/10 17:32:37 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:45
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Registering RDD 9 (groupByKey at /tmp/data/hello.py:44)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Got job 2 (collect at /tmp/data/hello.py:45) with 2 output partitions
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Final stage: ResultStage 5 (collect at /tmp/data/hello.py:45)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 4)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 4)
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 4 (PairwiseRDD[9] at groupByKey at /tmp/data/hello.py:44), which has no missing parents
+17/05/10 17:32:37 INFO memory.MemoryStore: Block broadcast_4 stored as values in memory (estimated size 8.5 KB, free 366.0 MB)
+17/05/10 17:32:37 INFO memory.MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 5.3 KB, free 366.0 MB)
+17/05/10 17:32:37 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.17.0.7:40447 (size: 5.3 KB, free: 366.3 MB)
+17/05/10 17:32:37 INFO spark.SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:37 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 4 (PairwiseRDD[9] at groupByKey at /tmp/data/hello.py:44)
+17/05/10 17:32:37 INFO scheduler.TaskSchedulerImpl: Adding task set 4.0 with 2 tasks
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 4.0 (TID 6, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:37 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 4.0 (TID 7, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:37 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.17.0.10:44453 (size: 5.3 KB, free: 93.3 MB)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 4.0 (TID 6) in 218 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 4.0 (TID 7) in 230 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: ShuffleMapStage 4 (groupByKey at /tmp/data/hello.py:44) finished in 0.239 s
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: looking for newly runnable stages
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: running: Set()
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 5)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: failed: Set()
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting ResultStage 5 (PythonRDD[12] at collect at /tmp/data/hello.py:45), which has no missing parents
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_5 stored as values in memory (estimated size 7.1 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 4.4 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.17.0.7:40447 (size: 4.4 KB, free: 366.3 MB)
+17/05/10 17:32:38 INFO spark.SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 5 (PythonRDD[12] at collect at /tmp/data/hello.py:45)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Adding task set 5.0 with 2 tasks
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 5.0 (TID 8, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 5.0 (TID 9, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.17.0.10:44453 (size: 4.4 KB, free: 93.3 MB)
+17/05/10 17:32:38 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.17.0.10:53006
+17/05/10 17:32:38 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 1 is 154 bytes
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 5.0 (TID 9) in 164 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 5.0 (TID 8) in 186 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: ResultStage 5 (collect at /tmp/data/hello.py:45) finished in 0.190 s
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Job 2 finished: collect at /tmp/data/hello.py:45, took 0.487939 s
+Group by user, sorted.
+user: zzpx, pages: [u'3', u'4']
+user: tp, pages: [u'1', u'3']
+user: zihan, pages: [u'1', u'3', u'4']
+user: zn8ae, pages: [u'1', u'2', u'3', u'37', u'49', u'50', u'59', u'60', u'61']
+user: Zihan, pages: [u'3', u'4', u'5']
+user: sakura, pages: [u'1', u'2', u'3', u'49', u'50', u'59', u'60', u'61']
+user: nike, pages: [u'1', u'2', u'3', u'36', u'46', u'47', u'49', u'50', u'59', u'60', u'61', u'62']
+17/05/10 17:32:38 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:52
+17/05/10 17:32:38 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 154 bytes
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Got job 3 (collect at /tmp/data/hello.py:52) with 2 output partitions
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Final stage: ResultStage 8 (collect at /tmp/data/hello.py:52)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting ResultStage 8 (PythonRDD[13] at collect at /tmp/data/hello.py:52), which has no missing parents
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_6 stored as values in memory (estimated size 7.8 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 4.8 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.17.0.7:40447 (size: 4.8 KB, free: 366.3 MB)
+17/05/10 17:32:38 INFO spark.SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 8 (PythonRDD[13] at collect at /tmp/data/hello.py:52)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Adding task set 8.0 with 2 tasks
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 8.0 (TID 10, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 8.0 (TID 11, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.17.0.10:44453 (size: 4.8 KB, free: 93.3 MB)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 8.0 (TID 10) in 144 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 8.0 (TID 11) in 152 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: ResultStage 8 (collect at /tmp/data/hello.py:52) finished in 0.160 s
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Job 3 finished: collect at /tmp/data/hello.py:52, took 0.217007 s
+Pages Pairs for Users
+user: zzpx, page pairs: (u'3', u'4')
+user: zzpx, page pairs: (u'4', u'3')
+user: tp, page pairs: (u'1', u'3')
+user: tp, page pairs: (u'3', u'1')
+user: zihan, page pairs: (u'1', u'3')
+user: zihan, page pairs: (u'1', u'4')
+user: zihan, page pairs: (u'3', u'1')
+user: zihan, page pairs: (u'3', u'4')
+user: zihan, page pairs: (u'4', u'1')
+user: zihan, page pairs: (u'4', u'3')
+user: zn8ae, page pairs: (u'1', u'2')
+user: zn8ae, page pairs: (u'1', u'3')
+user: zn8ae, page pairs: (u'1', u'37')
+user: zn8ae, page pairs: (u'1', u'49')
+user: zn8ae, page pairs: (u'1', u'50')
+user: zn8ae, page pairs: (u'1', u'59')
+user: zn8ae, page pairs: (u'1', u'60')
+user: zn8ae, page pairs: (u'1', u'61')
+user: zn8ae, page pairs: (u'2', u'1')
+user: zn8ae, page pairs: (u'2', u'3')
+user: zn8ae, page pairs: (u'2', u'37')
+user: zn8ae, page pairs: (u'2', u'49')
+user: zn8ae, page pairs: (u'2', u'50')
+user: zn8ae, page pairs: (u'2', u'59')
+user: zn8ae, page pairs: (u'2', u'60')
+user: zn8ae, page pairs: (u'2', u'61')
+user: zn8ae, page pairs: (u'3', u'1')
+user: zn8ae, page pairs: (u'3', u'2')
+user: zn8ae, page pairs: (u'3', u'37')
+user: zn8ae, page pairs: (u'3', u'49')
+user: zn8ae, page pairs: (u'3', u'50')
+user: zn8ae, page pairs: (u'3', u'59')
+user: zn8ae, page pairs: (u'3', u'60')
+user: zn8ae, page pairs: (u'3', u'61')
+user: zn8ae, page pairs: (u'37', u'1')
+user: zn8ae, page pairs: (u'37', u'2')
+user: zn8ae, page pairs: (u'37', u'3')
+user: zn8ae, page pairs: (u'37', u'49')
+user: zn8ae, page pairs: (u'37', u'50')
+user: zn8ae, page pairs: (u'37', u'59')
+user: zn8ae, page pairs: (u'37', u'60')
+user: zn8ae, page pairs: (u'37', u'61')
+user: zn8ae, page pairs: (u'49', u'1')
+user: zn8ae, page pairs: (u'49', u'2')
+user: zn8ae, page pairs: (u'49', u'3')
+user: zn8ae, page pairs: (u'49', u'37')
+user: zn8ae, page pairs: (u'49', u'50')
+user: zn8ae, page pairs: (u'49', u'59')
+user: zn8ae, page pairs: (u'49', u'60')
+user: zn8ae, page pairs: (u'49', u'61')
+user: zn8ae, page pairs: (u'50', u'1')
+user: zn8ae, page pairs: (u'50', u'2')
+user: zn8ae, page pairs: (u'50', u'3')
+user: zn8ae, page pairs: (u'50', u'37')
+user: zn8ae, page pairs: (u'50', u'49')
+user: zn8ae, page pairs: (u'50', u'59')
+user: zn8ae, page pairs: (u'50', u'60')
+user: zn8ae, page pairs: (u'50', u'61')
+user: zn8ae, page pairs: (u'59', u'1')
+user: zn8ae, page pairs: (u'59', u'2')
+user: zn8ae, page pairs: (u'59', u'3')
+user: zn8ae, page pairs: (u'59', u'37')
+user: zn8ae, page pairs: (u'59', u'49')
+user: zn8ae, page pairs: (u'59', u'50')
+user: zn8ae, page pairs: (u'59', u'60')
+user: zn8ae, page pairs: (u'59', u'61')
+user: zn8ae, page pairs: (u'60', u'1')
+user: zn8ae, page pairs: (u'60', u'2')
+user: zn8ae, page pairs: (u'60', u'3')
+user: zn8ae, page pairs: (u'60', u'37')
+user: zn8ae, page pairs: (u'60', u'49')
+user: zn8ae, page pairs: (u'60', u'50')
+user: zn8ae, page pairs: (u'60', u'59')
+user: zn8ae, page pairs: (u'60', u'61')
+user: zn8ae, page pairs: (u'61', u'1')
+user: zn8ae, page pairs: (u'61', u'2')
+user: zn8ae, page pairs: (u'61', u'3')
+user: zn8ae, page pairs: (u'61', u'37')
+user: zn8ae, page pairs: (u'61', u'49')
+user: zn8ae, page pairs: (u'61', u'50')
+user: zn8ae, page pairs: (u'61', u'59')
+user: zn8ae, page pairs: (u'61', u'60')
+user: Zihan, page pairs: (u'3', u'4')
+user: Zihan, page pairs: (u'3', u'5')
+user: Zihan, page pairs: (u'4', u'3')
+user: Zihan, page pairs: (u'4', u'5')
+user: Zihan, page pairs: (u'5', u'3')
+user: Zihan, page pairs: (u'5', u'4')
+user: sakura, page pairs: (u'1', u'2')
+user: sakura, page pairs: (u'1', u'3')
+user: sakura, page pairs: (u'1', u'49')
+user: sakura, page pairs: (u'1', u'50')
+user: sakura, page pairs: (u'1', u'59')
+user: sakura, page pairs: (u'1', u'60')
+user: sakura, page pairs: (u'1', u'61')
+user: sakura, page pairs: (u'2', u'1')
+user: sakura, page pairs: (u'2', u'3')
+user: sakura, page pairs: (u'2', u'49')
+user: sakura, page pairs: (u'2', u'50')
+user: sakura, page pairs: (u'2', u'59')
+user: sakura, page pairs: (u'2', u'60')
+user: sakura, page pairs: (u'2', u'61')
+user: sakura, page pairs: (u'3', u'1')
+user: sakura, page pairs: (u'3', u'2')
+user: sakura, page pairs: (u'3', u'49')
+user: sakura, page pairs: (u'3', u'50')
+user: sakura, page pairs: (u'3', u'59')
+user: sakura, page pairs: (u'3', u'60')
+user: sakura, page pairs: (u'3', u'61')
+user: sakura, page pairs: (u'49', u'1')
+user: sakura, page pairs: (u'49', u'2')
+user: sakura, page pairs: (u'49', u'3')
+user: sakura, page pairs: (u'49', u'50')
+user: sakura, page pairs: (u'49', u'59')
+user: sakura, page pairs: (u'49', u'60')
+user: sakura, page pairs: (u'49', u'61')
+user: sakura, page pairs: (u'50', u'1')
+user: sakura, page pairs: (u'50', u'2')
+user: sakura, page pairs: (u'50', u'3')
+user: sakura, page pairs: (u'50', u'49')
+user: sakura, page pairs: (u'50', u'59')
+user: sakura, page pairs: (u'50', u'60')
+user: sakura, page pairs: (u'50', u'61')
+user: sakura, page pairs: (u'59', u'1')
+user: sakura, page pairs: (u'59', u'2')
+user: sakura, page pairs: (u'59', u'3')
+user: sakura, page pairs: (u'59', u'49')
+user: sakura, page pairs: (u'59', u'50')
+user: sakura, page pairs: (u'59', u'60')
+user: sakura, page pairs: (u'59', u'61')
+user: sakura, page pairs: (u'60', u'1')
+user: sakura, page pairs: (u'60', u'2')
+user: sakura, page pairs: (u'60', u'3')
+user: sakura, page pairs: (u'60', u'49')
+user: sakura, page pairs: (u'60', u'50')
+user: sakura, page pairs: (u'60', u'59')
+user: sakura, page pairs: (u'60', u'61')
+user: sakura, page pairs: (u'61', u'1')
+user: sakura, page pairs: (u'61', u'2')
+user: sakura, page pairs: (u'61', u'3')
+user: sakura, page pairs: (u'61', u'49')
+user: sakura, page pairs: (u'61', u'50')
+user: sakura, page pairs: (u'61', u'59')
+user: sakura, page pairs: (u'61', u'60')
+user: nike, page pairs: (u'1', u'2')
+user: nike, page pairs: (u'1', u'3')
+user: nike, page pairs: (u'1', u'36')
+user: nike, page pairs: (u'1', u'46')
+user: nike, page pairs: (u'1', u'47')
+user: nike, page pairs: (u'1', u'49')
+user: nike, page pairs: (u'1', u'50')
+user: nike, page pairs: (u'1', u'59')
+user: nike, page pairs: (u'1', u'60')
+user: nike, page pairs: (u'1', u'61')
+user: nike, page pairs: (u'1', u'62')
+user: nike, page pairs: (u'2', u'1')
+user: nike, page pairs: (u'2', u'3')
+user: nike, page pairs: (u'2', u'36')
+user: nike, page pairs: (u'2', u'46')
+user: nike, page pairs: (u'2', u'47')
+user: nike, page pairs: (u'2', u'49')
+user: nike, page pairs: (u'2', u'50')
+user: nike, page pairs: (u'2', u'59')
+user: nike, page pairs: (u'2', u'60')
+user: nike, page pairs: (u'2', u'61')
+user: nike, page pairs: (u'2', u'62')
+user: nike, page pairs: (u'3', u'1')
+user: nike, page pairs: (u'3', u'2')
+user: nike, page pairs: (u'3', u'36')
+user: nike, page pairs: (u'3', u'46')
+user: nike, page pairs: (u'3', u'47')
+user: nike, page pairs: (u'3', u'49')
+user: nike, page pairs: (u'3', u'50')
+user: nike, page pairs: (u'3', u'59')
+user: nike, page pairs: (u'3', u'60')
+user: nike, page pairs: (u'3', u'61')
+user: nike, page pairs: (u'3', u'62')
+user: nike, page pairs: (u'36', u'1')
+user: nike, page pairs: (u'36', u'2')
+user: nike, page pairs: (u'36', u'3')
+user: nike, page pairs: (u'36', u'46')
+user: nike, page pairs: (u'36', u'47')
+user: nike, page pairs: (u'36', u'49')
+user: nike, page pairs: (u'36', u'50')
+user: nike, page pairs: (u'36', u'59')
+user: nike, page pairs: (u'36', u'60')
+user: nike, page pairs: (u'36', u'61')
+user: nike, page pairs: (u'36', u'62')
+user: nike, page pairs: (u'46', u'1')
+user: nike, page pairs: (u'46', u'2')
+user: nike, page pairs: (u'46', u'3')
+user: nike, page pairs: (u'46', u'36')
+user: nike, page pairs: (u'46', u'47')
+user: nike, page pairs: (u'46', u'49')
+user: nike, page pairs: (u'46', u'50')
+user: nike, page pairs: (u'46', u'59')
+user: nike, page pairs: (u'46', u'60')
+user: nike, page pairs: (u'46', u'61')
+user: nike, page pairs: (u'46', u'62')
+user: nike, page pairs: (u'47', u'1')
+user: nike, page pairs: (u'47', u'2')
+user: nike, page pairs: (u'47', u'3')
+user: nike, page pairs: (u'47', u'36')
+user: nike, page pairs: (u'47', u'46')
+user: nike, page pairs: (u'47', u'49')
+user: nike, page pairs: (u'47', u'50')
+user: nike, page pairs: (u'47', u'59')
+user: nike, page pairs: (u'47', u'60')
+user: nike, page pairs: (u'47', u'61')
+user: nike, page pairs: (u'47', u'62')
+user: nike, page pairs: (u'49', u'1')
+user: nike, page pairs: (u'49', u'2')
+user: nike, page pairs: (u'49', u'3')
+user: nike, page pairs: (u'49', u'36')
+user: nike, page pairs: (u'49', u'46')
+user: nike, page pairs: (u'49', u'47')
+user: nike, page pairs: (u'49', u'50')
+user: nike, page pairs: (u'49', u'59')
+user: nike, page pairs: (u'49', u'60')
+user: nike, page pairs: (u'49', u'61')
+user: nike, page pairs: (u'49', u'62')
+user: nike, page pairs: (u'50', u'1')
+user: nike, page pairs: (u'50', u'2')
+user: nike, page pairs: (u'50', u'3')
+user: nike, page pairs: (u'50', u'36')
+user: nike, page pairs: (u'50', u'46')
+user: nike, page pairs: (u'50', u'47')
+user: nike, page pairs: (u'50', u'49')
+user: nike, page pairs: (u'50', u'59')
+user: nike, page pairs: (u'50', u'60')
+user: nike, page pairs: (u'50', u'61')
+user: nike, page pairs: (u'50', u'62')
+user: nike, page pairs: (u'59', u'1')
+user: nike, page pairs: (u'59', u'2')
+user: nike, page pairs: (u'59', u'3')
+user: nike, page pairs: (u'59', u'36')
+user: nike, page pairs: (u'59', u'46')
+user: nike, page pairs: (u'59', u'47')
+user: nike, page pairs: (u'59', u'49')
+user: nike, page pairs: (u'59', u'50')
+user: nike, page pairs: (u'59', u'60')
+user: nike, page pairs: (u'59', u'61')
+user: nike, page pairs: (u'59', u'62')
+user: nike, page pairs: (u'60', u'1')
+user: nike, page pairs: (u'60', u'2')
+user: nike, page pairs: (u'60', u'3')
+user: nike, page pairs: (u'60', u'36')
+user: nike, page pairs: (u'60', u'46')
+user: nike, page pairs: (u'60', u'47')
+user: nike, page pairs: (u'60', u'49')
+user: nike, page pairs: (u'60', u'50')
+user: nike, page pairs: (u'60', u'59')
+user: nike, page pairs: (u'60', u'61')
+user: nike, page pairs: (u'60', u'62')
+user: nike, page pairs: (u'61', u'1')
+user: nike, page pairs: (u'61', u'2')
+user: nike, page pairs: (u'61', u'3')
+user: nike, page pairs: (u'61', u'36')
+user: nike, page pairs: (u'61', u'46')
+user: nike, page pairs: (u'61', u'47')
+user: nike, page pairs: (u'61', u'49')
+user: nike, page pairs: (u'61', u'50')
+user: nike, page pairs: (u'61', u'59')
+user: nike, page pairs: (u'61', u'60')
+user: nike, page pairs: (u'61', u'62')
+user: nike, page pairs: (u'62', u'1')
+user: nike, page pairs: (u'62', u'2')
+user: nike, page pairs: (u'62', u'3')
+user: nike, page pairs: (u'62', u'36')
+user: nike, page pairs: (u'62', u'46')
+user: nike, page pairs: (u'62', u'47')
+user: nike, page pairs: (u'62', u'49')
+user: nike, page pairs: (u'62', u'50')
+user: nike, page pairs: (u'62', u'59')
+user: nike, page pairs: (u'62', u'60')
+user: nike, page pairs: (u'62', u'61')
+17/05/10 17:32:38 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:59
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Got job 4 (collect at /tmp/data/hello.py:59) with 2 output partitions
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Final stage: ResultStage 11 (collect at /tmp/data/hello.py:59)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 10)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting ResultStage 11 (PythonRDD[14] at collect at /tmp/data/hello.py:59), which has no missing parents
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_7 stored as values in memory (estimated size 8.1 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 5.0 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.17.0.7:40447 (size: 5.0 KB, free: 366.2 MB)
+17/05/10 17:32:38 INFO spark.SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 11 (PythonRDD[14] at collect at /tmp/data/hello.py:59)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Adding task set 11.0 with 2 tasks
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 11.0 (TID 12, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 11.0 (TID 13, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.17.0.10:44453 (size: 5.0 KB, free: 93.2 MB)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 11.0 (TID 12) in 139 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 11.0 (TID 13) in 147 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: ResultStage 11 (collect at /tmp/data/hello.py:59) finished in 0.141 s
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Job 4 finished: collect at /tmp/data/hello.py:59, took 0.189913 s
+Reversed User Pairs
+pair: (u'3', u'4'), user: zzpx
+pair: (u'4', u'3'), user: zzpx
+pair: (u'1', u'3'), user: tp
+pair: (u'3', u'1'), user: tp
+pair: (u'1', u'3'), user: zihan
+pair: (u'1', u'4'), user: zihan
+pair: (u'3', u'1'), user: zihan
+pair: (u'3', u'4'), user: zihan
+pair: (u'4', u'1'), user: zihan
+pair: (u'4', u'3'), user: zihan
+pair: (u'1', u'2'), user: zn8ae
+pair: (u'1', u'3'), user: zn8ae
+pair: (u'1', u'37'), user: zn8ae
+pair: (u'1', u'49'), user: zn8ae
+pair: (u'1', u'50'), user: zn8ae
+pair: (u'1', u'59'), user: zn8ae
+pair: (u'1', u'60'), user: zn8ae
+pair: (u'1', u'61'), user: zn8ae
+pair: (u'2', u'1'), user: zn8ae
+pair: (u'2', u'3'), user: zn8ae
+pair: (u'2', u'37'), user: zn8ae
+pair: (u'2', u'49'), user: zn8ae
+pair: (u'2', u'50'), user: zn8ae
+pair: (u'2', u'59'), user: zn8ae
+pair: (u'2', u'60'), user: zn8ae
+pair: (u'2', u'61'), user: zn8ae
+pair: (u'3', u'1'), user: zn8ae
+pair: (u'3', u'2'), user: zn8ae
+pair: (u'3', u'37'), user: zn8ae
+pair: (u'3', u'49'), user: zn8ae
+pair: (u'3', u'50'), user: zn8ae
+pair: (u'3', u'59'), user: zn8ae
+pair: (u'3', u'60'), user: zn8ae
+pair: (u'3', u'61'), user: zn8ae
+pair: (u'37', u'1'), user: zn8ae
+pair: (u'37', u'2'), user: zn8ae
+pair: (u'37', u'3'), user: zn8ae
+pair: (u'37', u'49'), user: zn8ae
+pair: (u'37', u'50'), user: zn8ae
+pair: (u'37', u'59'), user: zn8ae
+pair: (u'37', u'60'), user: zn8ae
+pair: (u'37', u'61'), user: zn8ae
+pair: (u'49', u'1'), user: zn8ae
+pair: (u'49', u'2'), user: zn8ae
+pair: (u'49', u'3'), user: zn8ae
+pair: (u'49', u'37'), user: zn8ae
+pair: (u'49', u'50'), user: zn8ae
+pair: (u'49', u'59'), user: zn8ae
+pair: (u'49', u'60'), user: zn8ae
+pair: (u'49', u'61'), user: zn8ae
+pair: (u'50', u'1'), user: zn8ae
+pair: (u'50', u'2'), user: zn8ae
+pair: (u'50', u'3'), user: zn8ae
+pair: (u'50', u'37'), user: zn8ae
+pair: (u'50', u'49'), user: zn8ae
+pair: (u'50', u'59'), user: zn8ae
+pair: (u'50', u'60'), user: zn8ae
+pair: (u'50', u'61'), user: zn8ae
+pair: (u'59', u'1'), user: zn8ae
+pair: (u'59', u'2'), user: zn8ae
+pair: (u'59', u'3'), user: zn8ae
+pair: (u'59', u'37'), user: zn8ae
+pair: (u'59', u'49'), user: zn8ae
+pair: (u'59', u'50'), user: zn8ae
+pair: (u'59', u'60'), user: zn8ae
+pair: (u'59', u'61'), user: zn8ae
+pair: (u'60', u'1'), user: zn8ae
+pair: (u'60', u'2'), user: zn8ae
+pair: (u'60', u'3'), user: zn8ae
+pair: (u'60', u'37'), user: zn8ae
+pair: (u'60', u'49'), user: zn8ae
+pair: (u'60', u'50'), user: zn8ae
+pair: (u'60', u'59'), user: zn8ae
+pair: (u'60', u'61'), user: zn8ae
+pair: (u'61', u'1'), user: zn8ae
+pair: (u'61', u'2'), user: zn8ae
+pair: (u'61', u'3'), user: zn8ae
+pair: (u'61', u'37'), user: zn8ae
+pair: (u'61', u'49'), user: zn8ae
+pair: (u'61', u'50'), user: zn8ae
+pair: (u'61', u'59'), user: zn8ae
+pair: (u'61', u'60'), user: zn8ae
+pair: (u'3', u'4'), user: Zihan
+pair: (u'3', u'5'), user: Zihan
+pair: (u'4', u'3'), user: Zihan
+pair: (u'4', u'5'), user: Zihan
+pair: (u'5', u'3'), user: Zihan
+pair: (u'5', u'4'), user: Zihan
+pair: (u'1', u'2'), user: sakura
+pair: (u'1', u'3'), user: sakura
+pair: (u'1', u'49'), user: sakura
+pair: (u'1', u'50'), user: sakura
+pair: (u'1', u'59'), user: sakura
+pair: (u'1', u'60'), user: sakura
+pair: (u'1', u'61'), user: sakura
+pair: (u'2', u'1'), user: sakura
+pair: (u'2', u'3'), user: sakura
+pair: (u'2', u'49'), user: sakura
+pair: (u'2', u'50'), user: sakura
+pair: (u'2', u'59'), user: sakura
+pair: (u'2', u'60'), user: sakura
+pair: (u'2', u'61'), user: sakura
+pair: (u'3', u'1'), user: sakura
+pair: (u'3', u'2'), user: sakura
+pair: (u'3', u'49'), user: sakura
+pair: (u'3', u'50'), user: sakura
+pair: (u'3', u'59'), user: sakura
+pair: (u'3', u'60'), user: sakura
+pair: (u'3', u'61'), user: sakura
+pair: (u'49', u'1'), user: sakura
+pair: (u'49', u'2'), user: sakura
+pair: (u'49', u'3'), user: sakura
+pair: (u'49', u'50'), user: sakura
+pair: (u'49', u'59'), user: sakura
+pair: (u'49', u'60'), user: sakura
+pair: (u'49', u'61'), user: sakura
+pair: (u'50', u'1'), user: sakura
+pair: (u'50', u'2'), user: sakura
+pair: (u'50', u'3'), user: sakura
+pair: (u'50', u'49'), user: sakura
+pair: (u'50', u'59'), user: sakura
+pair: (u'50', u'60'), user: sakura
+pair: (u'50', u'61'), user: sakura
+pair: (u'59', u'1'), user: sakura
+pair: (u'59', u'2'), user: sakura
+pair: (u'59', u'3'), user: sakura
+pair: (u'59', u'49'), user: sakura
+pair: (u'59', u'50'), user: sakura
+pair: (u'59', u'60'), user: sakura
+pair: (u'59', u'61'), user: sakura
+pair: (u'60', u'1'), user: sakura
+pair: (u'60', u'2'), user: sakura
+pair: (u'60', u'3'), user: sakura
+pair: (u'60', u'49'), user: sakura
+pair: (u'60', u'50'), user: sakura
+pair: (u'60', u'59'), user: sakura
+pair: (u'60', u'61'), user: sakura
+pair: (u'61', u'1'), user: sakura
+pair: (u'61', u'2'), user: sakura
+pair: (u'61', u'3'), user: sakura
+pair: (u'61', u'49'), user: sakura
+pair: (u'61', u'50'), user: sakura
+pair: (u'61', u'59'), user: sakura
+pair: (u'61', u'60'), user: sakura
+pair: (u'1', u'2'), user: nike
+pair: (u'1', u'3'), user: nike
+pair: (u'1', u'36'), user: nike
+pair: (u'1', u'46'), user: nike
+pair: (u'1', u'47'), user: nike
+pair: (u'1', u'49'), user: nike
+pair: (u'1', u'50'), user: nike
+pair: (u'1', u'59'), user: nike
+pair: (u'1', u'60'), user: nike
+pair: (u'1', u'61'), user: nike
+pair: (u'1', u'62'), user: nike
+pair: (u'2', u'1'), user: nike
+pair: (u'2', u'3'), user: nike
+pair: (u'2', u'36'), user: nike
+pair: (u'2', u'46'), user: nike
+pair: (u'2', u'47'), user: nike
+pair: (u'2', u'49'), user: nike
+pair: (u'2', u'50'), user: nike
+pair: (u'2', u'59'), user: nike
+pair: (u'2', u'60'), user: nike
+pair: (u'2', u'61'), user: nike
+pair: (u'2', u'62'), user: nike
+pair: (u'3', u'1'), user: nike
+pair: (u'3', u'2'), user: nike
+pair: (u'3', u'36'), user: nike
+pair: (u'3', u'46'), user: nike
+pair: (u'3', u'47'), user: nike
+pair: (u'3', u'49'), user: nike
+pair: (u'3', u'50'), user: nike
+pair: (u'3', u'59'), user: nike
+pair: (u'3', u'60'), user: nike
+pair: (u'3', u'61'), user: nike
+pair: (u'3', u'62'), user: nike
+pair: (u'36', u'1'), user: nike
+pair: (u'36', u'2'), user: nike
+pair: (u'36', u'3'), user: nike
+pair: (u'36', u'46'), user: nike
+pair: (u'36', u'47'), user: nike
+pair: (u'36', u'49'), user: nike
+pair: (u'36', u'50'), user: nike
+pair: (u'36', u'59'), user: nike
+pair: (u'36', u'60'), user: nike
+pair: (u'36', u'61'), user: nike
+pair: (u'36', u'62'), user: nike
+pair: (u'46', u'1'), user: nike
+pair: (u'46', u'2'), user: nike
+pair: (u'46', u'3'), user: nike
+pair: (u'46', u'36'), user: nike
+pair: (u'46', u'47'), user: nike
+pair: (u'46', u'49'), user: nike
+pair: (u'46', u'50'), user: nike
+pair: (u'46', u'59'), user: nike
+pair: (u'46', u'60'), user: nike
+pair: (u'46', u'61'), user: nike
+pair: (u'46', u'62'), user: nike
+pair: (u'47', u'1'), user: nike
+pair: (u'47', u'2'), user: nike
+pair: (u'47', u'3'), user: nike
+pair: (u'47', u'36'), user: nike
+pair: (u'47', u'46'), user: nike
+pair: (u'47', u'49'), user: nike
+pair: (u'47', u'50'), user: nike
+pair: (u'47', u'59'), user: nike
+pair: (u'47', u'60'), user: nike
+pair: (u'47', u'61'), user: nike
+pair: (u'47', u'62'), user: nike
+pair: (u'49', u'1'), user: nike
+pair: (u'49', u'2'), user: nike
+pair: (u'49', u'3'), user: nike
+pair: (u'49', u'36'), user: nike
+pair: (u'49', u'46'), user: nike
+pair: (u'49', u'47'), user: nike
+pair: (u'49', u'50'), user: nike
+pair: (u'49', u'59'), user: nike
+pair: (u'49', u'60'), user: nike
+pair: (u'49', u'61'), user: nike
+pair: (u'49', u'62'), user: nike
+pair: (u'50', u'1'), user: nike
+pair: (u'50', u'2'), user: nike
+pair: (u'50', u'3'), user: nike
+pair: (u'50', u'36'), user: nike
+pair: (u'50', u'46'), user: nike
+pair: (u'50', u'47'), user: nike
+pair: (u'50', u'49'), user: nike
+pair: (u'50', u'59'), user: nike
+pair: (u'50', u'60'), user: nike
+pair: (u'50', u'61'), user: nike
+pair: (u'50', u'62'), user: nike
+pair: (u'59', u'1'), user: nike
+pair: (u'59', u'2'), user: nike
+pair: (u'59', u'3'), user: nike
+pair: (u'59', u'36'), user: nike
+pair: (u'59', u'46'), user: nike
+pair: (u'59', u'47'), user: nike
+pair: (u'59', u'49'), user: nike
+pair: (u'59', u'50'), user: nike
+pair: (u'59', u'60'), user: nike
+pair: (u'59', u'61'), user: nike
+pair: (u'59', u'62'), user: nike
+pair: (u'60', u'1'), user: nike
+pair: (u'60', u'2'), user: nike
+pair: (u'60', u'3'), user: nike
+pair: (u'60', u'36'), user: nike
+pair: (u'60', u'46'), user: nike
+pair: (u'60', u'47'), user: nike
+pair: (u'60', u'49'), user: nike
+pair: (u'60', u'50'), user: nike
+pair: (u'60', u'59'), user: nike
+pair: (u'60', u'61'), user: nike
+pair: (u'60', u'62'), user: nike
+pair: (u'61', u'1'), user: nike
+pair: (u'61', u'2'), user: nike
+pair: (u'61', u'3'), user: nike
+pair: (u'61', u'36'), user: nike
+pair: (u'61', u'46'), user: nike
+pair: (u'61', u'47'), user: nike
+pair: (u'61', u'49'), user: nike
+pair: (u'61', u'50'), user: nike
+pair: (u'61', u'59'), user: nike
+pair: (u'61', u'60'), user: nike
+pair: (u'61', u'62'), user: nike
+pair: (u'62', u'1'), user: nike
+pair: (u'62', u'2'), user: nike
+pair: (u'62', u'3'), user: nike
+pair: (u'62', u'36'), user: nike
+pair: (u'62', u'46'), user: nike
+pair: (u'62', u'47'), user: nike
+pair: (u'62', u'49'), user: nike
+pair: (u'62', u'50'), user: nike
+pair: (u'62', u'59'), user: nike
+pair: (u'62', u'60'), user: nike
+pair: (u'62', u'61'), user: nike
+17/05/10 17:32:38 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:66
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Registering RDD 16 (groupByKey at /tmp/data/hello.py:65)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Got job 5 (collect at /tmp/data/hello.py:66) with 2 output partitions
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Final stage: ResultStage 15 (collect at /tmp/data/hello.py:66)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 14)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 14)
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 14 (PairwiseRDD[16] at groupByKey at /tmp/data/hello.py:65), which has no missing parents
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_8 stored as values in memory (estimated size 10.0 KB, free 366.0 MB)
+17/05/10 17:32:38 INFO memory.MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 6.3 KB, free 365.9 MB)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.17.0.7:40447 (size: 6.3 KB, free: 366.2 MB)
+17/05/10 17:32:38 INFO spark.SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:38 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 14 (PairwiseRDD[16] at groupByKey at /tmp/data/hello.py:65)
+17/05/10 17:32:38 INFO scheduler.TaskSchedulerImpl: Adding task set 14.0 with 2 tasks
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 14.0 (TID 14, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:38 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 14.0 (TID 15, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:38 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.17.0.10:44453 (size: 6.3 KB, free: 93.2 MB)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 14.0 (TID 15) in 163 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 14.0 (TID 14) in 199 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: ShuffleMapStage 14 (groupByKey at /tmp/data/hello.py:65) finished in 0.204 s
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: looking for newly runnable stages
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: running: Set()
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 15)
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: failed: Set()
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting ResultStage 15 (PythonRDD[19] at collect at /tmp/data/hello.py:66), which has no missing parents
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_9 stored as values in memory (estimated size 6.8 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 4.2 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO storage.BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.17.0.7:40447 (size: 4.2 KB, free: 366.2 MB)
+17/05/10 17:32:39 INFO spark.SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 15 (PythonRDD[19] at collect at /tmp/data/hello.py:66)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Adding task set 15.0 with 2 tasks
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 15.0 (TID 16, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 15.0 (TID 17, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:39 INFO storage.BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.17.0.10:44453 (size: 4.2 KB, free: 93.2 MB)
+17/05/10 17:32:39 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 172.17.0.10:53006
+17/05/10 17:32:39 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 2 is 154 bytes
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 15.0 (TID 16) in 213 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 15.0 (TID 17) in 235 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: ResultStage 15 (collect at /tmp/data/hello.py:66) finished in 0.231 s
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Job 5 finished: collect at /tmp/data/hello.py:66, took 0.522110 s
+Grouped Pairs for all users
+pair: (u'3', u'62'), users: [u'nike']
+pair: (u'49', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'36', u'50'), users: [u'nike']
+pair: (u'59', u'46'), users: [u'nike']
+pair: (u'36', u'47'), users: [u'nike']
+pair: (u'2', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'37', u'3'), users: [u'zn8ae']
+pair: (u'62', u'1'), users: [u'nike']
+pair: (u'46', u'62'), users: [u'nike']
+pair: (u'36', u'2'), users: [u'nike']
+pair: (u'36', u'49'), users: [u'nike']
+pair: (u'60', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'49', u'47'), users: [u'nike']
+pair: (u'47', u'50'), users: [u'nike']
+pair: (u'61', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'37'), users: [u'zn8ae']
+pair: (u'50', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'1', u'46'), users: [u'nike']
+pair: (u'62', u'59'), users: [u'nike']
+pair: (u'59', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'47', u'2'), users: [u'nike']
+pair: (u'62', u'60'), users: [u'nike']
+pair: (u'50', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'50', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'59', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'50', u'47'), users: [u'nike']
+pair: (u'62', u'3'), users: [u'nike']
+pair: (u'46', u'1'), users: [u'nike']
+pair: (u'60', u'62'), users: [u'nike']
+pair: (u'1', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'46', u'59'), users: [u'nike']
+pair: (u'37', u'1'), users: [u'zn8ae']
+pair: (u'36', u'61'), users: [u'nike']
+pair: (u'49', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'61', u'47'), users: [u'nike']
+pair: (u'49', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'1', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'60', u'46'), users: [u'nike']
+pair: (u'47', u'36'), users: [u'nike']
+pair: (u'62', u'46'), users: [u'nike']
+pair: (u'59', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'59', u'37'), users: [u'zn8ae']
+pair: (u'2', u'36'), users: [u'nike']
+pair: (u'47', u'61'), users: [u'nike']
+pair: (u'5', u'3'), users: [u'Zihan']
+pair: (u'3', u'46'), users: [u'nike']
+pair: (u'61', u'36'), users: [u'nike']
+pair: (u'46', u'60'), users: [u'nike']
+pair: (u'1', u'62'), users: [u'nike']
+pair: (u'49', u'36'), users: [u'nike']
+pair: (u'1', u'37'), users: [u'zn8ae']
+pair: (u'2', u'47'), users: [u'nike']
+pair: (u'61', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'50', u'36'), users: [u'nike']
+pair: (u'59', u'62'), users: [u'nike']
+pair: (u'60', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'5'), users: [u'Zihan']
+pair: (u'3', u'1'), users: [u'tp', u'zihan', u'zn8ae', u'sakura', u'nike']
+pair: (u'37', u'59'), users: [u'zn8ae']
+pair: (u'60', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'46', u'3'), users: [u'nike']
+pair: (u'37', u'60'), users: [u'zn8ae']
+pair: (u'61', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'47', u'49'), users: [u'nike']
+pair: (u'1', u'3'), users: [u'tp', u'zihan', u'zn8ae', u'sakura', u'nike']
+pair: (u'60', u'37'), users: [u'zn8ae']
+pair: (u'59', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'36', u'59'), users: [u'nike']
+pair: (u'46', u'47'), users: [u'nike']
+pair: (u'46', u'2'), users: [u'nike']
+pair: (u'37', u'61'), users: [u'zn8ae']
+pair: (u'62', u'47'), users: [u'nike']
+pair: (u'4', u'5'), users: [u'Zihan']
+pair: (u'59', u'47'), users: [u'nike']
+pair: (u'59', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'37'), users: [u'zn8ae']
+pair: (u'61', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'36'), users: [u'nike']
+pair: (u'46', u'36'), users: [u'nike']
+pair: (u'49', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'4', u'3'), users: [u'zzpx', u'zihan', u'Zihan']
+pair: (u'61', u'62'), users: [u'nike']
+pair: (u'62', u'50'), users: [u'nike']
+pair: (u'2', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'36', u'1'), users: [u'nike']
+pair: (u'62', u'2'), users: [u'nike']
+pair: (u'46', u'61'), users: [u'nike']
+pair: (u'61', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'1', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'37', u'49'), users: [u'zn8ae']
+pair: (u'49', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'4', u'1'), users: [u'zihan']
+pair: (u'47', u'3'), users: [u'nike']
+pair: (u'1', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'5', u'4'), users: [u'Zihan']
+pair: (u'60', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'1', u'47'), users: [u'nike']
+pair: (u'50', u'37'), users: [u'zn8ae']
+pair: (u'47', u'1'), users: [u'nike']
+pair: (u'1', u'4'), users: [u'zihan']
+pair: (u'50', u'46'), users: [u'nike']
+pair: (u'60', u'47'), users: [u'nike']
+pair: (u'3', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'49', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'47', u'60'), users: [u'nike']
+pair: (u'3', u'47'), users: [u'nike']
+pair: (u'1', u'36'), users: [u'nike']
+pair: (u'46', u'49'), users: [u'nike']
+pair: (u'50', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'3', u'4'), users: [u'zzpx', u'zihan', u'Zihan']
+pair: (u'60', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'60', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'37', u'50'), users: [u'zn8ae']
+pair: (u'49', u'37'), users: [u'zn8ae']
+pair: (u'36', u'3'), users: [u'nike']
+pair: (u'49', u'46'), users: [u'nike']
+pair: (u'50', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'59', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'62', u'61'), users: [u'nike']
+pair: (u'49', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'62', u'49'), users: [u'nike']
+pair: (u'3', u'2'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'36', u'60'), users: [u'nike']
+pair: (u'36', u'46'), users: [u'nike']
+pair: (u'1', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'61', u'46'), users: [u'nike']
+pair: (u'49', u'62'), users: [u'nike']
+pair: (u'59', u'36'), users: [u'nike']
+pair: (u'60', u'49'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'46'), users: [u'nike']
+pair: (u'47', u'46'), users: [u'nike']
+pair: (u'61', u'37'), users: [u'zn8ae']
+pair: (u'61', u'60'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'60', u'36'), users: [u'nike']
+pair: (u'59', u'50'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'37', u'2'), users: [u'zn8ae']
+pair: (u'50', u'3'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'47', u'62'), users: [u'nike']
+pair: (u'1', u'61'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'2', u'62'), users: [u'nike']
+pair: (u'46', u'50'), users: [u'nike']
+pair: (u'2', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'50', u'62'), users: [u'nike']
+pair: (u'47', u'59'), users: [u'nike']
+pair: (u'62', u'36'), users: [u'nike']
+pair: (u'50', u'1'), users: [u'zn8ae', u'sakura', u'nike']
+pair: (u'36', u'62'), users: [u'nike']
+pair: (u'61', u'59'), users: [u'zn8ae', u'sakura', u'nike']
+17/05/10 17:32:39 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:73
+17/05/10 17:32:39 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 154 bytes
+17/05/10 17:32:39 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 1 is 154 bytes
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Got job 6 (collect at /tmp/data/hello.py:73) with 2 output partitions
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Final stage: ResultStage 19 (collect at /tmp/data/hello.py:73)
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 18)
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting ResultStage 19 (PythonRDD[20] at collect at /tmp/data/hello.py:73), which has no missing parents
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_10 stored as values in memory (estimated size 7.0 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 4.3 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO storage.BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.17.0.7:40447 (size: 4.3 KB, free: 366.2 MB)
+17/05/10 17:32:39 INFO spark.SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 19 (PythonRDD[20] at collect at /tmp/data/hello.py:73)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Adding task set 19.0 with 2 tasks
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 19.0 (TID 18, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 19.0 (TID 19, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:39 INFO storage.BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.17.0.10:44453 (size: 4.3 KB, free: 93.2 MB)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 19.0 (TID 19) in 139 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 19.0 (TID 18) in 153 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: ResultStage 19 (collect at /tmp/data/hello.py:73) finished in 0.142 s
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Job 6 finished: collect at /tmp/data/hello.py:73, took 0.224595 s
+Count Pairs
+pair: (u'3', u'62'), count: 1
+pair: (u'49', u'50'), count: 3
+pair: (u'36', u'50'), count: 1
+pair: (u'59', u'46'), count: 1
+pair: (u'36', u'47'), count: 1
+pair: (u'2', u'50'), count: 3
+pair: (u'3', u'59'), count: 3
+pair: (u'37', u'3'), count: 1
+pair: (u'62', u'1'), count: 1
+pair: (u'46', u'62'), count: 1
+pair: (u'36', u'2'), count: 1
+pair: (u'36', u'49'), count: 1
+pair: (u'60', u'3'), count: 3
+pair: (u'49', u'47'), count: 1
+pair: (u'47', u'50'), count: 1
+pair: (u'61', u'2'), count: 3
+pair: (u'3', u'37'), count: 1
+pair: (u'50', u'61'), count: 3
+pair: (u'2', u'49'), count: 3
+pair: (u'1', u'46'), count: 1
+pair: (u'62', u'59'), count: 1
+pair: (u'59', u'60'), count: 3
+pair: (u'47', u'2'), count: 1
+pair: (u'62', u'60'), count: 1
+pair: (u'50', u'49'), count: 3
+pair: (u'50', u'2'), count: 3
+pair: (u'59', u'3'), count: 3
+pair: (u'50', u'47'), count: 1
+pair: (u'62', u'3'), count: 1
+pair: (u'46', u'1'), count: 1
+pair: (u'60', u'62'), count: 1
+pair: (u'1', u'59'), count: 3
+pair: (u'46', u'59'), count: 1
+pair: (u'37', u'1'), count: 1
+pair: (u'36', u'61'), count: 1
+pair: (u'49', u'61'), count: 3
+pair: (u'61', u'47'), count: 1
+pair: (u'49', u'2'), count: 3
+pair: (u'1', u'60'), count: 3
+pair: (u'60', u'46'), count: 1
+pair: (u'47', u'36'), count: 1
+pair: (u'62', u'46'), count: 1
+pair: (u'59', u'1'), count: 3
+pair: (u'3', u'60'), count: 3
+pair: (u'59', u'37'), count: 1
+pair: (u'2', u'36'), count: 1
+pair: (u'47', u'61'), count: 1
+pair: (u'5', u'3'), count: 1
+pair: (u'3', u'46'), count: 1
+pair: (u'61', u'36'), count: 1
+pair: (u'46', u'60'), count: 1
+pair: (u'1', u'62'), count: 1
+pair: (u'49', u'36'), count: 1
+pair: (u'1', u'37'), count: 1
+pair: (u'2', u'47'), count: 1
+pair: (u'61', u'49'), count: 3
+pair: (u'50', u'36'), count: 1
+pair: (u'59', u'62'), count: 1
+pair: (u'60', u'59'), count: 3
+pair: (u'2', u'61'), count: 3
+pair: (u'3', u'5'), count: 1
+pair: (u'3', u'1'), count: 5
+pair: (u'37', u'59'), count: 1
+pair: (u'60', u'1'), count: 3
+pair: (u'46', u'3'), count: 1
+pair: (u'37', u'60'), count: 1
+pair: (u'61', u'50'), count: 3
+pair: (u'47', u'49'), count: 1
+pair: (u'1', u'3'), count: 5
+pair: (u'60', u'37'), count: 1
+pair: (u'59', u'49'), count: 3
+pair: (u'36', u'59'), count: 1
+pair: (u'46', u'47'), count: 1
+pair: (u'46', u'2'), count: 1
+pair: (u'37', u'61'), count: 1
+pair: (u'62', u'47'), count: 1
+pair: (u'4', u'5'), count: 1
+pair: (u'59', u'47'), count: 1
+pair: (u'59', u'2'), count: 3
+pair: (u'3', u'49'), count: 3
+pair: (u'2', u'37'), count: 1
+pair: (u'61', u'3'), count: 3
+pair: (u'3', u'36'), count: 1
+pair: (u'46', u'36'), count: 1
+pair: (u'49', u'1'), count: 3
+pair: (u'4', u'3'), count: 3
+pair: (u'61', u'62'), count: 1
+pair: (u'62', u'50'), count: 1
+pair: (u'2', u'1'), count: 3
+pair: (u'36', u'1'), count: 1
+pair: (u'62', u'2'), count: 1
+pair: (u'46', u'61'), count: 1
+pair: (u'61', u'1'), count: 3
+pair: (u'1', u'50'), count: 3
+pair: (u'2', u'60'), count: 3
+pair: (u'37', u'49'), count: 1
+pair: (u'49', u'3'), count: 3
+pair: (u'4', u'1'), count: 1
+pair: (u'47', u'3'), count: 1
+pair: (u'1', u'2'), count: 3
+pair: (u'2', u'3'), count: 3
+pair: (u'5', u'4'), count: 1
+pair: (u'60', u'2'), count: 3
+pair: (u'3', u'50'), count: 3
+pair: (u'1', u'47'), count: 1
+pair: (u'50', u'37'), count: 1
+pair: (u'47', u'1'), count: 1
+pair: (u'1', u'4'), count: 1
+pair: (u'50', u'46'), count: 1
+pair: (u'60', u'47'), count: 1
+pair: (u'3', u'61'), count: 3
+pair: (u'49', u'59'), count: 3
+pair: (u'47', u'60'), count: 1
+pair: (u'3', u'47'), count: 1
+pair: (u'1', u'36'), count: 1
+pair: (u'46', u'49'), count: 1
+pair: (u'50', u'60'), count: 3
+pair: (u'3', u'4'), count: 3
+pair: (u'60', u'50'), count: 3
+pair: (u'60', u'61'), count: 3
+pair: (u'37', u'50'), count: 1
+pair: (u'49', u'37'), count: 1
+pair: (u'36', u'3'), count: 1
+pair: (u'49', u'46'), count: 1
+pair: (u'50', u'59'), count: 3
+pair: (u'59', u'61'), count: 3
+pair: (u'62', u'61'), count: 1
+pair: (u'49', u'60'), count: 3
+pair: (u'62', u'49'), count: 1
+pair: (u'3', u'2'), count: 3
+pair: (u'36', u'60'), count: 1
+pair: (u'36', u'46'), count: 1
+pair: (u'1', u'49'), count: 3
+pair: (u'61', u'46'), count: 1
+pair: (u'49', u'62'), count: 1
+pair: (u'59', u'36'), count: 1
+pair: (u'60', u'49'), count: 3
+pair: (u'2', u'46'), count: 1
+pair: (u'47', u'46'), count: 1
+pair: (u'61', u'37'), count: 1
+pair: (u'61', u'60'), count: 3
+pair: (u'60', u'36'), count: 1
+pair: (u'59', u'50'), count: 3
+pair: (u'37', u'2'), count: 1
+pair: (u'50', u'3'), count: 3
+pair: (u'47', u'62'), count: 1
+pair: (u'1', u'61'), count: 3
+pair: (u'2', u'62'), count: 1
+pair: (u'46', u'50'), count: 1
+pair: (u'2', u'59'), count: 3
+pair: (u'50', u'62'), count: 1
+pair: (u'47', u'59'), count: 1
+pair: (u'62', u'36'), count: 1
+pair: (u'50', u'1'), count: 3
+pair: (u'36', u'62'), count: 1
+pair: (u'61', u'59'), count: 3
+17/05/10 17:32:39 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:80
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Got job 7 (collect at /tmp/data/hello.py:80) with 2 output partitions
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Final stage: ResultStage 23 (collect at /tmp/data/hello.py:80)
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 22)
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting ResultStage 23 (PythonRDD[21] at collect at /tmp/data/hello.py:80), which has no missing parents
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_11 stored as values in memory (estimated size 7.4 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO memory.MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 4.5 KB, free 365.9 MB)
+17/05/10 17:32:39 INFO storage.BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.17.0.7:40447 (size: 4.5 KB, free: 366.2 MB)
+17/05/10 17:32:39 INFO spark.SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:39 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 23 (PythonRDD[21] at collect at /tmp/data/hello.py:80)
+17/05/10 17:32:39 INFO scheduler.TaskSchedulerImpl: Adding task set 23.0 with 2 tasks
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 23.0 (TID 20, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:39 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 23.0 (TID 21, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.17.0.10:44453 (size: 4.5 KB, free: 93.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on 172.17.0.10:44453 in memory (size: 5.7 KB, free: 93.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on 172.17.0.7:40447 in memory (size: 5.7 KB, free: 366.2 MB)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 23.0 (TID 20) in 242 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on 172.17.0.7:40447 in memory (size: 4.0 KB, free: 366.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on 172.17.0.10:44453 in memory (size: 4.0 KB, free: 93.2 MB)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 23.0 (TID 21) in 286 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 23.0, whose tasks have all completed, from pool 
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: ResultStage 23 (collect at /tmp/data/hello.py:80) finished in 0.282 s
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Job 7 finished: collect at /tmp/data/hello.py:80, took 0.373951 s
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on 172.17.0.7:40447 in memory (size: 5.3 KB, free: 366.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on 172.17.0.10:44453 in memory (size: 5.3 KB, free: 93.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on 172.17.0.7:40447 in memory (size: 4.4 KB, free: 366.2 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on 172.17.0.10:44453 in memory (size: 4.4 KB, free: 93.2 MB)
+Pairs with 3 or more user
+pair: (u'49', u'50'), count: 3
+pair: (u'2', u'50'), count: 3
+pair: (u'3', u'59'), count: 3
+pair: (u'60', u'3'), count: 3
+pair: (u'61', u'2'), count: 3
+pair: (u'50', u'61'), count: 3
+pair: (u'2', u'49'), count: 3
+pair: (u'59', u'60'), count: 3
+pair: (u'50', u'49'), count: 3
+pair: (u'50', u'2'), count: 3
+pair: (u'59', u'3'), count: 3
+pair: (u'1', u'59'), count: 3
+pair: (u'49', u'61'), count: 3
+pair: (u'49', u'2'), count: 3
+pair: (u'1', u'60'), count: 3
+pair: (u'59', u'1'), count: 3
+pair: (u'3', u'60'), count: 3
+pair: (u'61', u'49'), count: 3
+pair: (u'60', u'59'), count: 3
+pair: (u'2', u'61'), count: 3
+pair: (u'3', u'1'), count: 5
+pair: (u'60', u'1'), count: 3
+pair: (u'61', u'50'), count: 3
+pair: (u'1', u'3'), count: 5
+pair: (u'59', u'49'), count: 3
+pair: (u'59', u'2'), count: 3
+pair: (u'3', u'49'), count: 3
+pair: (u'61', u'3'), count: 3
+pair: (u'49', u'1'), count: 3
+pair: (u'4', u'3'), count: 3
+pair: (u'2', u'1'), count: 3
+pair: (u'61', u'1'), count: 3
+pair: (u'1', u'50'), count: 3
+pair: (u'2', u'60'), count: 3
+pair: (u'49', u'3'), count: 3
+pair: (u'1', u'2'), count: 3
+pair: (u'2', u'3'), count: 3
+pair: (u'60', u'2'), count: 3
+pair: (u'3', u'50'), count: 3
+pair: (u'3', u'61'), count: 3
+pair: (u'49', u'59'), count: 3
+pair: (u'50', u'60'), count: 3
+pair: (u'3', u'4'), count: 3
+pair: (u'60', u'50'), count: 3
+pair: (u'60', u'61'), count: 3
+pair: (u'50', u'59'), count: 3
+pair: (u'59', u'61'), count: 3
+pair: (u'49', u'60'), count: 3
+pair: (u'3', u'2'), count: 3
+pair: (u'1', u'49'), count: 3
+pair: (u'60', u'49'), count: 3
+pair: (u'61', u'60'), count: 3
+pair: (u'59', u'50'), count: 3
+pair: (u'50', u'3'), count: 3
+pair: (u'1', u'61'), count: 3
+pair: (u'2', u'59'), count: 3
+pair: (u'50', u'1'), count: 3
+pair: (u'61', u'59'), count: 3
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on 172.17.0.7:40447 in memory (size: 4.8 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on 172.17.0.10:44453 in memory (size: 4.8 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_7_piece0 on 172.17.0.7:40447 in memory (size: 5.0 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_7_piece0 on 172.17.0.10:44453 in memory (size: 5.0 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_8_piece0 on 172.17.0.7:40447 in memory (size: 6.3 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_8_piece0 on 172.17.0.10:44453 in memory (size: 6.3 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:86
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Got job 8 (collect at /tmp/data/hello.py:86) with 2 output partitions
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Final stage: ResultStage 27 (collect at /tmp/data/hello.py:86)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 26)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Missing parents: List()
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting ResultStage 27 (PythonRDD[22] at collect at /tmp/data/hello.py:86), which has no missing parents
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_9_piece0 on 172.17.0.7:40447 in memory (size: 4.2 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_9_piece0 on 172.17.0.10:44453 in memory (size: 4.2 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_12 stored as values in memory (estimated size 7.6 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_10_piece0 on 172.17.0.7:40447 in memory (size: 4.3 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 4.6 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Removed broadcast_10_piece0 on 172.17.0.10:44453 in memory (size: 4.3 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.17.0.7:40447 (size: 4.6 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO spark.SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 27 (PythonRDD[22] at collect at /tmp/data/hello.py:86)
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Adding task set 27.0 with 2 tasks
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 27.0 (TID 22, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 27.0 (TID 23, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.17.0.10:44453 (size: 4.6 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 27.0 (TID 22) in 119 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 27.0 (TID 23) in 146 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 27.0, whose tasks have all completed, from pool 
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: ResultStage 27 (collect at /tmp/data/hello.py:86) finished in 0.158 s
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Job 8 finished: collect at /tmp/data/hello.py:86, took 0.245278 s
+Temp Table
+pair: 49, count: 50
+pair: 2, count: 50
+pair: 3, count: 59
+pair: 60, count: 3
+pair: 61, count: 2
+pair: 50, count: 61
+pair: 2, count: 49
+pair: 59, count: 60
+pair: 50, count: 49
+pair: 50, count: 2
+pair: 59, count: 3
+pair: 1, count: 59
+pair: 49, count: 61
+pair: 49, count: 2
+pair: 1, count: 60
+pair: 59, count: 1
+pair: 3, count: 60
+pair: 61, count: 49
+pair: 60, count: 59
+pair: 2, count: 61
+pair: 3, count: 1
+pair: 60, count: 1
+pair: 61, count: 50
+pair: 1, count: 3
+pair: 59, count: 49
+pair: 59, count: 2
+pair: 3, count: 49
+pair: 61, count: 3
+pair: 49, count: 1
+pair: 4, count: 3
+pair: 2, count: 1
+pair: 61, count: 1
+pair: 1, count: 50
+pair: 2, count: 60
+pair: 49, count: 3
+pair: 1, count: 2
+pair: 2, count: 3
+pair: 60, count: 2
+pair: 3, count: 50
+pair: 3, count: 61
+pair: 49, count: 59
+pair: 50, count: 60
+pair: 3, count: 4
+pair: 60, count: 50
+pair: 60, count: 61
+pair: 50, count: 59
+pair: 59, count: 61
+pair: 49, count: 60
+pair: 3, count: 2
+pair: 1, count: 49
+pair: 60, count: 49
+pair: 61, count: 60
+pair: 59, count: 50
+pair: 50, count: 3
+pair: 1, count: 61
+pair: 2, count: 59
+pair: 50, count: 1
+pair: 61, count: 59
+17/05/10 17:32:40 INFO spark.SparkContext: Starting job: collect at /tmp/data/hello.py:96
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Registering RDD 24 (groupByKey at /tmp/data/hello.py:95)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Got job 9 (collect at /tmp/data/hello.py:96) with 2 output partitions
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Final stage: ResultStage 32 (collect at /tmp/data/hello.py:96)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 31)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 31)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 31 (PairwiseRDD[24] at groupByKey at /tmp/data/hello.py:95), which has no missing parents
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_13 stored as values in memory (estimated size 9.5 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 5.9 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.17.0.7:40447 (size: 5.9 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO spark.SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 31 (PairwiseRDD[24] at groupByKey at /tmp/data/hello.py:95)
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Adding task set 31.0 with 2 tasks
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 31.0 (TID 24, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 31.0 (TID 25, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5845 bytes)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.17.0.10:44453 (size: 5.9 KB, free: 93.3 MB)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 31.0 (TID 24) in 215 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 31.0 (TID 25) in 221 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: ShuffleMapStage 31 (groupByKey at /tmp/data/hello.py:95) finished in 0.225 s
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: looking for newly runnable stages
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: running: Set()
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 31.0, whose tasks have all completed, from pool 
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 32)
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: failed: Set()
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting ResultStage 32 (PythonRDD[27] at collect at /tmp/data/hello.py:96), which has no missing parents
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_14 stored as values in memory (estimated size 7.1 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO memory.MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 4.4 KB, free 366.0 MB)
+17/05/10 17:32:40 INFO storage.BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.17.0.7:40447 (size: 4.4 KB, free: 366.3 MB)
+17/05/10 17:32:40 INFO spark.SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:996
+17/05/10 17:32:40 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 32 (PythonRDD[27] at collect at /tmp/data/hello.py:96)
+17/05/10 17:32:40 INFO scheduler.TaskSchedulerImpl: Adding task set 32.0 with 2 tasks
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 32.0 (TID 26, 172.17.0.10, executor 0, partition 0, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:40 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 32.0 (TID 27, 172.17.0.10, executor 0, partition 1, NODE_LOCAL, 5856 bytes)
+17/05/10 17:32:41 INFO storage.BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.17.0.10:44453 (size: 4.4 KB, free: 93.3 MB)
+17/05/10 17:32:41 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 172.17.0.10:53006
+17/05/10 17:32:41 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 3 is 154 bytes
+17/05/10 17:32:41 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 32.0 (TID 27) in 171 ms on 172.17.0.10 (executor 0) (1/2)
+17/05/10 17:32:41 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 32.0 (TID 26) in 181 ms on 172.17.0.10 (executor 0) (2/2)
+17/05/10 17:32:41 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 32.0, whose tasks have all completed, from pool 
+17/05/10 17:32:41 INFO scheduler.DAGScheduler: ResultStage 32 (collect at /tmp/data/hello.py:96) finished in 0.183 s
+17/05/10 17:32:41 INFO scheduler.DAGScheduler: Job 9 finished: collect at /tmp/data/hello.py:96, took 0.459811 s
+Final Recommendation Table
+item: 1, recommendations: [u'2', u'3', u'49', u'50', u'59', u'60', u'61']
+item: 60, recommendations: [u'1', u'2', u'3', u'49', u'50', u'59', u'61']
+item: 3, recommendations: [u'1', u'2', u'4', u'49', u'50', u'59', u'60', u'61']
+item: 59, recommendations: [u'1', u'2', u'3', u'49', u'50', u'60', u'61']
+item: 61, recommendations: [u'1', u'2', u'3', u'49', u'50', u'59', u'60']
+item: 4, recommendations: [u'3']
+item: 2, recommendations: [u'1', u'3', u'49', u'50', u'59', u'60', u'61']
+item: 50, recommendations: [u'1', u'2', u'3', u'49', u'59', u'60', u'61']
+item: 49, recommendations: [u'1', u'2', u'3', u'50', u'59', u'60', u'61']
+17/05/10 17:32:41 INFO server.ServerConnector: Stopped ServerConnector@692bcdb5{HTTP/1.1}{0.0.0.0:4040}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@48a89eea{/stages/stage/kill,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@73d2016a{/jobs/job/kill,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@4b80b936{/api,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@65e1a004{/,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@1bc400aa{/static,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@137563f7{/executors/threadDump/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@419dea44{/executors/threadDump,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@2e9a183e{/executors/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@783e10fb{/executors,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@4923633b{/environment/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@46153fa6{/environment,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@81bdd27{/storage/rdd/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@7b9956a2{/storage/rdd,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@2c547db2{/storage/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@231dbbb1{/storage,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c1dfd93{/stages/pool/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@2d3f44ae{/stages/pool,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@261a4e4{/stages/stage/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@522db24b{/stages/stage,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@45ae87b5{/stages/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@463d2997{/stages,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@2a9f407a{/jobs/job/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@4edb29f2{/jobs/job,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@32663ec3{/jobs/json,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@3a5ac29c{/jobs,null,UNAVAILABLE}
+17/05/10 17:32:41 INFO ui.SparkUI: Stopped Spark web UI at http://172.17.0.7:4040
+17/05/10 17:32:41 INFO cluster.StandaloneSchedulerBackend: Shutting down all executors
+17/05/10 17:32:41 INFO cluster.CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+17/05/10 17:32:41 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/05/10 17:32:41 INFO memory.MemoryStore: MemoryStore cleared
+17/05/10 17:32:41 INFO storage.BlockManager: BlockManager stopped
+17/05/10 17:32:41 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+17/05/10 17:32:41 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/05/10 17:32:41 INFO spark.SparkContext: Successfully stopped SparkContext
+17/05/10 17:32:42 INFO util.ShutdownHookManager: Shutdown hook called
+17/05/10 17:32:42 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9cf66a6d-dfd1-4152-a9d3-00464a623cd4/pyspark-2bef1799-f04c-4dca-b7e6-4e4f9628871b
+17/05/10 17:32:42 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9cf66a6d-dfd1-4152-a9d3-00464a623cd4

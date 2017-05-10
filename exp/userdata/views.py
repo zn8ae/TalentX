@@ -92,7 +92,8 @@ def getRec(request):
             content = {"sid":sid}
             r3 = requests.post('http://models-api:8000/skills/lookup',content)
             data3 = r3.json()
-            recomm.append(data3)
+            if data3["status"]!="error":
+                recomm.append(data3)
         response = {"status":"success","recomm":recomm}
     else:
         response = {"status":"error"}

@@ -31,16 +31,16 @@ web:
     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
-web2:
-    image: tp33/django
-    links:
-      -  exp:exp-api
-    volumes:
-      - ./web/:/app
-    ports:
-      - "8004:8000"
-    #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
-    command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
+# web2:
+#     image: tp33/django
+#     links:
+#       -  exp:exp-api
+#     volumes:
+#       - ./web/:/app
+#     ports:
+#       - "8004:8000"
+#     #command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes ./web/wsgi.py"
+#     command: bash -c "pip install requests && mod_wsgi-express start-server --working-directory ./ --reload-on-changes ./web/wsgi.py"
 
 kafka:
    image: spotify/kafka
